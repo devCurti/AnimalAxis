@@ -1,0 +1,19 @@
+@import "primeicons/primeicons.css";
+@import "primeflex/primeflex.css";
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
+
+*, body, html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.azulAnimal{
+    background-color: #06367a;
+}
+
+.brancoAnimaç{
+    background-color: #EBF2FC;
+}
