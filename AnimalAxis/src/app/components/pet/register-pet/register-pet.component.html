@@ -1,0 +1,52 @@
+<div class="container azulAnimal p-4 overflow-auto flex flex-column align-items-center justify-content-center">
+    <div class="brancoAnimal text-center w-11 p-4 md:p-8 overflow-auto">
+        <div class="p-2 mb-5">
+            <h1 class="text-xl md:text-2xl">Registro Pet</h1>
+        </div>
+        <div [formGroup]="petForm" class="text-left mb-3">
+            <p *ngIf="sexo == true">Macho</p>
+            <p *ngIf="sexo == false">Fêmea</p>
+            <p-inputSwitch formControlName="sexo" />
+        </div>
+        <div class="grid">
+            <div class="col-12 md:col-6 lg:col-6">
+                <div [formGroup]="petForm" class="flex flex-column gap-3 mb-3">
+                    <label for="nome" class="text-left">Nome</label>
+                    <input id="nome" type="text" pInputText formControlName="nome" />
+                    <label for="raca" class="text-left">Raça</label>
+                    <input id="raca" type="text" pInputText formControlName="raca" />
+                    <label for="criadores" class="text-left">Criadores</label>
+                    <input id="criadores" type="text" pInputText formControlName="criadores" />
+                    <label for="dataDeNascimento" class="text-left">Data de Nascimento</label>
+                    <input id="dataDeNascimento" type="text" pInputText formControlName="dataDeNascimento" />
+                    <label for="numeroDoRegistro" class="text-left">Número do Registro</label>
+                    <input id="numeroDoRegistro" type="text" pInputText formControlName="numeroDoRegistro" />
+                </div>
+            </div>
+            <div class="col-12 md:col-6 lg:col-6">
+                <div [formGroup]="petForm" class="flex flex-column gap-3 mb-3">
+                    <label for="pai" class="text-left">Pai</label>
+                    <input id="pai" type="text" pInputText formControlName="pai" />
+                    <label for="mae" class="text-left">Mãe</label>
+                    <input id="mae" type="text" pInputText formControlName="mae" />
+                    <label for="cor" class="text-left">Cor</label>
+                    <input id="cor" type="text" pInputText formControlName="cor" />
+                    <ng-container *ngIf="sexo == false">
+                    <label for="periodoDaCruza" class="text-left">Período da Cruza</label>
+                    <input id="periodoDaCruza" type="text" pInputText formControlName="periodoDeCruza" />
+                    <label for="dataDoCio" class="text-left">Data do Cio</label>
+                    <input id="dataDoCio" type="text" pInputText formControlName="dataDoCio" />
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+        <div class="grid">
+            <div class="col-12">
+                <a routerLink="/home"
+                    class="p-button p-component font-bold text-white bg-green-500 border-none no-underline w-8 py-3 text-base md:text-lg">
+                    <span class="p-button-label">Cadastrar Novo Pet</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

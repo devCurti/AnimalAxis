@@ -4,7 +4,7 @@
 @import "primeng/resources/primeng.css";
 
 
-*, body, html{
+body, html{
     margin: 0;
     padding: 0;
     height: 100%;
@@ -14,6 +14,11 @@
     background-color: #06367a;
 }
 
-.brancoAnimaç{
+.brancoAnimal{
     background-color: #EBF2FC;
+}
+
+.container{
+    width: 100%;
+    height: 100%;
 }
