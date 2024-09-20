@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgFor } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MenubarModule } from 'primeng/menubar';
 import { NgIf } from '@angular/common';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -11,11 +12,12 @@ import { NgIf } from '@angular/common';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
 
-  constructor(){}
+  constructor(private auth: AuthService){}
 
-  user = 'Meu Canil'
+  userEmail: any = localStorage.getItem('user.email');
+  user = JSON.parse(localStorage.getItem('user') || '{}');
 
   pets = [
     {
@@ -42,7 +44,7 @@ export class HomeComponent {
 
   items = [
     {
-      label: this.user,
+      label: this.userEmail,
       url: '',
       icon: '',
       route: '/home'
@@ -62,6 +64,12 @@ export class HomeComponent {
     },
   ]
 
-  
+  ngOnInit(){
+    this.userEmail = this.user.email;
+  }
+
+  logout(){
+    this.auth.logout();
+  }
   
 }

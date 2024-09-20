@@ -29,12 +29,12 @@
             <h1>img</h1>
         </div>
         <div class="text-center mt-7 text-white font-bold bg-black-alpha-30 w-full p-1">
-            <p><i class="pi pi-user mr-2" style="font-size: 1rem"></i>{{user}}</p>
+            <p><i class="pi pi-user mr-2" style="font-size: 1rem"></i>{{userEmail}}</p>
         </div>
         <div class="flex-grow-1"></div>
         <div class="bottom-100 flex flex-column justify-content-end text-center mb-6 text-white font-bold">
             <p><i class="pi pi-sliders-v mr-2" style="font-size: 1rem"></i>Configurações</p>
-            <p><i class="pi pi-sign-out mr-2" style="font-size: 1rem"></i>Sair</p>
+            <p (click)="logout()"><i class="pi pi-sign-out mr-2" style="font-size: 1rem"></i>Sair</p>
         </div>
     </div>
     <div class="brancoAnimal col-12 md:col-10">

@@ -1,0 +1,18 @@
+<div class="container azulAnimal flex align-items-center justify-content-center overflow-auto">
+    <div class="loginContainer brancoAnimal text-center md:auto md:w-6 p-4 md:p-8 overflow-auto">
+        <div class="p-2 mb-5 p-8">
+            <p>Registre-se!</p>
+        </div>
+        <div class="">
+            <form [formGroup]="registerForm" (ngSubmit)="register()" class="flex flex-column gap-4 mb-3">
+                <label for="email" class="text-left">Endereço de E-mail:</label>
+                <input id="email" type="text" pInputText formControlName="email" />
+                <label for="senha" class="text-left">Senha:</label>
+                <input id="senha" type="password" pInputText formControlName="senha" />
+                <button type="submit" class="p-button p-component font-bold text-white bg-green-500 border-none no-underline mt-6">
+                    <span class="p-button-label">Cadastrar</span>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

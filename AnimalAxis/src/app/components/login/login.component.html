@@ -2,19 +2,17 @@
     <div class="loginContainer brancoAnimal text-center md:auto md:w-6 p-4 md:p-8 overflow-auto">
         <div class="p-2 mb-5 p-8">
             <p>Novo por aqui?</p>
-            <p>Registre-se</p>
+            <a routerLink="/register">Registre-se</a>
         </div>
-        <div class="">
-            <div [formGroup]="loginForm" class="flex flex-column gap-4 mb-3">
-                <label for="email" class="text-left">Endereço de E-mail:</label>
-                <input id="email" type="text" pInputText formControlName="email" />
-                <label for="senha" class="text-left">Senha:</label>
-                <input id="senha" type="text" pInputText formControlName="senha" />
-                <p class="text-right mb-6">Esqueceu sua senha?</p>
-                <a routerLink="/home" class="p-button p-component font-bold text-white bg-green-500 border-none no-underline mt-6">
-                    <span class="p-button-label">Entrar</span>
-                </a>
-            </div>
-        </div>
+        <form [formGroup]="loginForm" (ngSubmit)="login()" class="flex flex-column gap-4 mb-3">
+            <label for="email" class="text-left">Endereço de E-mail:</label>
+            <input id="email" type="email" pInputText formControlName="email" />
+            <label for="senha" class="text-left">Senha:</label>
+            <input id="senha" type="password" pInputText formControlName="senha" />
+            <p class="text-right mb-6">Esqueceu sua senha?</p>
+            <button type="submit" class="p-button p-component font-bold text-white bg-green-500 border-none no-underline mt-6">
+                <span class="p-button-label">Entrar</span>
+            </button>
+        </form>
     </div>
 </div>
