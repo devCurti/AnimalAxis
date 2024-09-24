@@ -36,12 +36,12 @@ builder.Services.AddAuthentication(options =>
         ValidateAudience = false,
         ValidateLifetime = true,
         ValidateIssuerSigningKey = true,
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("sua_chave_secreta")),
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("jF9k8NqZ7LxW2bR6cT4yHpS1mE5vQwU3")),
     };
 });
 
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("database")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ProdDatabase")));
 
 var app = builder.Build();
 

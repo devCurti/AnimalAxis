@@ -1,0 +1,10 @@
+{
+  "routes": [
+    "/home",
+    "/login",
+    "/pet/details",
+    "/pet/register",
+    "/pet/search",
+    "/register"
+  ]
+}

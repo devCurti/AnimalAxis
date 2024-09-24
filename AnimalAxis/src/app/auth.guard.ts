@@ -8,16 +8,22 @@ import { Observable } from 'rxjs';
 })
 export class AuthGuard implements CanActivate {
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) { }
 
   canActivate(): boolean {
     const token = localStorage.getItem('token');
-    console.log(token)
-    if (token) {
-      return true;
-    } else {
+    console.log(token);
+
+    const currentRoute = this.router.url;
+
+    // Se o usuário estiver logado (token existe)
+    if (!token) {
       this.router.navigate(['/login']);
       return false;
+    } else {
+      return true;
     }
+
   }
+
 }

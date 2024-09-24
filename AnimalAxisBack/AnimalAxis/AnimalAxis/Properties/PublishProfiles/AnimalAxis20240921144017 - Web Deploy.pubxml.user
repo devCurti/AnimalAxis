@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Esse arquivo é usado pelo processo de publicação/pacote do seu projeto Web. É possível personalizar o comportamento deste processo
+ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAjO7dwuxa4UakD/b8GtReBAAAAAACAAAAAAAQZgAAAAEAACAAAACqsqY59FvNnvHPtuFbygW3AdfojWp47Q0qzodum1enBAAAAAAOgAAAAAIAACAAAACVprxB/RFjNpcD9gutbDI37WB5YsGGHLs80sgFNw0REIAAAAAkXttmJf19mmDPkR2UBhzzrJ/1R4yfo7sjhfyw6urMaIcDqXacQ9PHNJ9KoBGzQPcT08rdSPX5xcfLst8wlueiDg53KBhOy2jP9LES3fh4C4h9G+kcRA3QzYkTKHTmLMl6Q8/pgEpVFpKHYTb8rOcRAPbiMX2wwyuw790CEMn8akAAAAA3HK9xGepV/pb2IeVvzSmPb704pOIpEi6XEoLwQpQkzSSxLYHvMami906BuD/IOvuqTCht0odm7hIPHAcjY0li</EncryptedPassword>
+    <History>True|2024-09-21T17:52:40.1558609Z||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="database">
+      <Value>Host=localhost%3b Database=AnimalAxis%3b Username=postgres%3b password=1234</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="AnimalAxis.Data.AppDbContext">
+      <Value>Host=localhost%3b Database=AnimalAxis%3b Username=postgres%3b password=1234</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("617ce5d2-5575-430d-b8eb-f53fe98e6fc5")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("AnimalAxis")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2d361e5da89e4ad39a9036d8c158db66efb44a54")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0a7e52d3f0338edc1e53f9b04269560e9f5bd851")]
 [assembly: System.Reflection.AssemblyProductAttribute("AnimalAxis")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AnimalAxis")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

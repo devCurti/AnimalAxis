@@ -17,7 +17,7 @@ import { response } from 'express';
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit{
 
   loginForm: any;
 
@@ -27,6 +27,10 @@ export class LoginComponent {
       email: new FormControl(''),
       senha: new FormControl('')
     });
+  }
+
+  ngOnInit(): void {
+    this.auth.verifyAuth();
   }
 
   login(){
@@ -42,4 +46,5 @@ export class LoginComponent {
       }
     })
   }
+  
 }

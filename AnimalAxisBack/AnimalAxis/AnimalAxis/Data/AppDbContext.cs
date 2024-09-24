@@ -14,7 +14,7 @@ namespace AnimalAxis.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql(configuration.GetConnectionString("database"));
+            optionsBuilder.UseSqlServer(configuration.GetConnectionString("ProdDatabase"));
         }
 
         public DbSet<Usuario> Usuarios { get; set; }

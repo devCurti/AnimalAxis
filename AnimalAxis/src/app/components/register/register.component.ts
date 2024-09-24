@@ -38,12 +38,11 @@ export class RegisterComponent {
       await this.auth.register(usuario).subscribe({
         next: response => {
           console.log('Usuário adicionado com sucesso:', response);
+          this.router.navigate(['/login']);
         },
         error: error => {
           console.error('Erro ao adicionar usuário:', error);
         }
       });
-
-      //this.router.navigate(['/login']);
     }
 }

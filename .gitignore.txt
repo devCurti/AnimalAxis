@@ -1,0 +1,7 @@
+# Ignorar arquivos de ambiente
+/src/environments/environment.development.ts
+/src/environments/environment.ts
+
+# Ignorar diretórios e arquivos do Visual Studio
+.vs/
+*.vsidx

@@ -1,13 +1,11 @@
 ﻿using AnimalAxis.Data;
 using AnimalAxis.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace AnimalAxis.Controllers
 {
@@ -26,14 +24,14 @@ namespace AnimalAxis.Controllers
         [HttpPost("register")]
         public async Task<ActionResult<Usuario>> Register(Usuario usuario)
         {
-            // Verifica se o usuário já existe
+
             var existingUser = await _context.Usuarios.SingleOrDefaultAsync(u => u.email == usuario.email);
             if (existingUser != null)
             {
                 return Conflict("Usuário já existe.");
             }
 
-            // Hash a senha antes de salvar
+
             usuario.password = BCrypt.Net.BCrypt.HashPassword(usuario.password);
 
             _context.Usuarios.Add(usuario);
@@ -46,18 +44,18 @@ namespace AnimalAxis.Controllers
         [HttpPost("login")]
         public async Task<ActionResult<object>> Login(Usuario usuario)
         {
-            // Valida as credenciais do usuário (com a senha hash)
+
             var existingUser = await _context.Usuarios.SingleOrDefaultAsync(u => u.email == usuario.email);
 
-            // Verifica se o usuário existe e se a senha está correta
+
             if (existingUser == null || !BCrypt.Net.BCrypt.Verify(usuario.password, existingUser.password))
             {
                 return Unauthorized("Credenciais inválidas.");
             }
 
-            // Gera o token
+
             var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.UTF8.GetBytes("sua_chave_secreta_super_secreta_que_tem_mais_de_32_bytes!");
+            var key = Encoding.UTF8.GetBytes("jF9k8NqZ7LxW2bR6cT4yHpS1mE5vQwU3");
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new Claim[]

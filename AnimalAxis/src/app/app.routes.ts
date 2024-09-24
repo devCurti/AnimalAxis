@@ -7,9 +7,9 @@ import { SearchPetComponent } from './components/pet/search-pet/search-pet.compo
 import { RegisterComponent } from './components/register/register.component';
 import { AuthGuard } from './auth.guard';
 
-export const routes: Routes = [ {path: 'home', component: HomeComponent},
-    { path: '',   redirectTo: '/login', pathMatch: 'full' },
+export const routes: Routes = [ {path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
     { path: 'login', component: LoginComponent},
+    { path: '', redirectTo: '/login', pathMatch: 'full' },
     { path: 'pet/register', component: RegisterPetComponent, canActivate: [AuthGuard]},
     { path: 'pet/details', component: DetailsPetComponent, canActivate: [AuthGuard]},
     { path: 'pet/search', component: SearchPetComponent, canActivate: [AuthGuard]},

@@ -1,0 +1,145 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\wwwroot\\3rdpartylicenses.txt",
+      "PackagePath": "staticwebassets\\3rdpartylicenses.txt"
+    },
+    {
+      "Id": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\wwwroot\\browser\\favicon.ico",
+      "PackagePath": "staticwebassets\\browser\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\wwwroot\\browser\\home\\index.html",
+      "PackagePath": "staticwebassets\\browser\\home\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\wwwroot\\browser\\index.csr.html",
+      "PackagePath": "staticwebassets\\browser\\index.csr.html"
+    },
+    {
+      "Id": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\wwwroot\\browser\\login\\index.html",
+      "PackagePath": "staticwebassets\\browser\\login\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\wwwroot\\browser\\main-73G2PBM7.js",
+      "PackagePath": "staticwebassets\\browser\\main-73G2PBM7.js"
+    },
+    {
+      "Id": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\wwwroot\\browser\\media\\Inter-italic.var-SWFAXF2C.woff2",
+      "PackagePath": "staticwebassets\\browser\\media\\Inter-italic.var-SWFAXF2C.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\wwwroot\\browser\\media\\Inter-roman.var-WIJJYAE4.woff2",
+      "PackagePath": "staticwebassets\\browser\\media\\Inter-roman.var-WIJJYAE4.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\wwwroot\\browser\\media\\color-3LUHUBGQ.png",
+      "PackagePath": "staticwebassets\\browser\\media\\color-3LUHUBGQ.png"
+    },
+    {
+      "Id": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\wwwroot\\browser\\media\\hue-RMMBQOAC.png",
+      "PackagePath": "staticwebassets\\browser\\media\\hue-RMMBQOAC.png"
+    },
+    {
+      "Id": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\wwwroot\\browser\\media\\primeicons-4GST5W3O.woff2",
+      "PackagePath": "staticwebassets\\browser\\media\\primeicons-4GST5W3O.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\wwwroot\\browser\\media\\primeicons-DHQU4SEP.svg",
+      "PackagePath": "staticwebassets\\browser\\media\\primeicons-DHQU4SEP.svg"
+    },
+    {
+      "Id": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\wwwroot\\browser\\media\\primeicons-GEFHGEHP.ttf",
+      "PackagePath": "staticwebassets\\browser\\media\\primeicons-GEFHGEHP.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\wwwroot\\browser\\media\\primeicons-P53SE5CV.woff",
+      "PackagePath": "staticwebassets\\browser\\media\\primeicons-P53SE5CV.woff"
+    },
+    {
+      "Id": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\wwwroot\\browser\\media\\primeicons-RSSEDYLY.eot",
+      "PackagePath": "staticwebassets\\browser\\media\\primeicons-RSSEDYLY.eot"
+    },
+    {
+      "Id": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\wwwroot\\browser\\pet\\details\\index.html",
+      "PackagePath": "staticwebassets\\browser\\pet\\details\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\wwwroot\\browser\\pet\\register\\index.html",
+      "PackagePath": "staticwebassets\\browser\\pet\\register\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\wwwroot\\browser\\pet\\search\\index.html",
+      "PackagePath": "staticwebassets\\browser\\pet\\search\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\wwwroot\\browser\\polyfills-SCHOHYNV.js",
+      "PackagePath": "staticwebassets\\browser\\polyfills-SCHOHYNV.js"
+    },
+    {
+      "Id": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\wwwroot\\browser\\register\\index.html",
+      "PackagePath": "staticwebassets\\browser\\register\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\wwwroot\\browser\\styles-6IW3H6PL.css",
+      "PackagePath": "staticwebassets\\browser\\styles-6IW3H6PL.css"
+    },
+    {
+      "Id": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\wwwroot\\prerendered-routes.json",
+      "PackagePath": "staticwebassets\\prerendered-routes.json"
+    },
+    {
+      "Id": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\wwwroot\\server\\chunk-4JMZSEDO.mjs",
+      "PackagePath": "staticwebassets\\server\\chunk-4JMZSEDO.mjs"
+    },
+    {
+      "Id": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\wwwroot\\server\\chunk-M4QZF3NY.mjs",
+      "PackagePath": "staticwebassets\\server\\chunk-M4QZF3NY.mjs"
+    },
+    {
+      "Id": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\wwwroot\\server\\chunk-WUI6SWGE.mjs",
+      "PackagePath": "staticwebassets\\server\\chunk-WUI6SWGE.mjs"
+    },
+    {
+      "Id": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\wwwroot\\server\\chunk-ZE3CN4FX.mjs",
+      "PackagePath": "staticwebassets\\server\\chunk-ZE3CN4FX.mjs"
+    },
+    {
+      "Id": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\wwwroot\\server\\index.server.html",
+      "PackagePath": "staticwebassets\\server\\index.server.html"
+    },
+    {
+      "Id": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\wwwroot\\server\\main.server.mjs",
+      "PackagePath": "staticwebassets\\server\\main.server.mjs"
+    },
+    {
+      "Id": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\wwwroot\\server\\polyfills.server.mjs",
+      "PackagePath": "staticwebassets\\server\\polyfills.server.mjs"
+    },
+    {
+      "Id": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\wwwroot\\server\\render-utils.server.mjs",
+      "PackagePath": "staticwebassets\\server\\render-utils.server.mjs"
+    },
+    {
+      "Id": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\wwwroot\\server\\server.mjs",
+      "PackagePath": "staticwebassets\\server\\server.mjs"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.AnimalAxis.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.AnimalAxis.props",
+      "PackagePath": "build\\AnimalAxis.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.AnimalAxis.props",
+      "PackagePath": "buildMultiTargeting\\AnimalAxis.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.AnimalAxis.props",
+      "PackagePath": "buildTransitive\\AnimalAxis.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -23,7 +23,7 @@ export class AuthService {
 
   logout(): void {
     localStorage.removeItem('token');
-    localStorage.removeItem('user'); // Limpa os dados do usuário ao sair
+    localStorage.removeItem('user');
     this.router.navigate(['/login']);
   }
 
@@ -49,5 +49,12 @@ export class AuthService {
   register(usuario: Usuario): Observable<Usuario> {
     console.log(usuario)
     return this.http.post<Usuario>(`${this.apiUrl}/register`, usuario);
+  }
+
+  verifyAuth(){
+    const token = localStorage.getItem('token');
+    if(token){
+      this.router.navigate(['/home']);
+    }
   }
 }
