@@ -24,7 +24,7 @@ export class RegisterComponent {
 
     registerForm: any;
 
-    constructor(private auth: AuthService, private userService: UsuarioService, private router: Router){
+    constructor(private auth: AuthService, private router: Router){
       this.registerForm = new FormGroup({
       email: new FormControl(''),
       senha: new FormControl('')

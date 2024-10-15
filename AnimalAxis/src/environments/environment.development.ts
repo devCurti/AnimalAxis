@@ -4,7 +4,8 @@ import { getApps, initializeApp } from 'firebase/app';
 export const environment = {
     production: false,
     firebaseConfig: firebase,
-    apiUrl: 'https://animalaxissapi.azurewebsites.net/api'
+    //apiUrl: 'https://animalaxissapi.azurewebsites.net/api'
+    apiUrl: 'https://localhost:44316/api'
 };
 
 

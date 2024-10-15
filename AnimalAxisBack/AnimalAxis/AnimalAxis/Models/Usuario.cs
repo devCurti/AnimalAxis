@@ -10,6 +10,7 @@ namespace AnimalAxis.Models
         public string? email { get; set; }
         public string? phone { get; set; }
         public string? name { get; set; }
+        public virtual List<Pet> Pets { get; set; } = new();
 
     }
 }

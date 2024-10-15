@@ -44,15 +44,12 @@ namespace AnimalAxis.Controllers
         [HttpPost("login")]
         public async Task<ActionResult<object>> Login(Usuario usuario)
         {
-
             var existingUser = await _context.Usuarios.SingleOrDefaultAsync(u => u.email == usuario.email);
-
 
             if (existingUser == null || !BCrypt.Net.BCrypt.Verify(usuario.password, existingUser.password))
             {
                 return Unauthorized("Credenciais inválidas.");
             }
-
 
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.UTF8.GetBytes("jF9k8NqZ7LxW2bR6cT4yHpS1mE5vQwU3");
@@ -60,20 +57,23 @@ namespace AnimalAxis.Controllers
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim(ClaimTypes.NameIdentifier, existingUser.id.ToString()),
-                    new Claim(ClaimTypes.Email, existingUser.email)
+            new Claim(ClaimTypes.NameIdentifier, existingUser.id.ToString()),
+            new Claim(ClaimTypes.Email, existingUser.email)
                 }),
                 Expires = DateTime.UtcNow.AddHours(1),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
 
             var token = tokenHandler.CreateToken(tokenDescriptor);
+            var tokenString = tokenHandler.WriteToken(token);
+
             return Ok(new
             {
-                Token = token,
+                Token = tokenString,
                 UserId = existingUser.id,
                 Email = existingUser.email
             });
         }
+
     }
 }

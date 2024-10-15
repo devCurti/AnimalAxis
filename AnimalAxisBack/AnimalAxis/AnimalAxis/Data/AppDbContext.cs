@@ -17,6 +17,36 @@ namespace AnimalAxis.Data
             optionsBuilder.UseSqlServer(configuration.GetConnectionString("ProdDatabase"));
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Pet>()
+                .HasOne(p => p.Pai)
+                .WithMany()
+                .HasForeignKey(p => p.PaiId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Pet>()
+                .HasOne(p => p.Mae)
+                .WithMany()
+                .HasForeignKey(p => p.MaeId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Pet>()
+            .HasOne(p => p.Cor)
+            .WithMany(c => c.Pets)
+            .HasForeignKey(p => p.CorId)
+            .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Pet>()
+            .HasOne(p => p.Raca)
+            .WithMany(c => c.Pets)
+            .HasForeignKey(p => p.RacaId)
+            .OnDelete(DeleteBehavior.Cascade);
+        }
+
         public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<AnimalAxis.Models.Pet> Pet { get; set; } = default!;
+        public DbSet<AnimalAxis.Models.Raca> Raca { get; set; } = default!;
+        public DbSet<AnimalAxis.Models.Cor> Cor { get; set; } = default!;
     }
 }

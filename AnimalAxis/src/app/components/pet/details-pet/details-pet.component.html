@@ -1,41 +1,41 @@
 <div class="container azulAnimal p-4 overflow-auto flex flex-column align-items-center justify-content-center">
     <div class="brancoAnimal text-center w-11 p-4 md:p-8 overflow-auto">
         <div class="p-2 mb-5">
-            <h1 class="text-xl md:text-2xl">{{pet.nome}}</h1>
+            <h1 class="text-xl md:text-2xl">{{pet?.nome}}</h1>
         </div>
         <div class="text-left">
             <label class="text-left font-bold">Sexo</label>
-            <p *ngIf="pet.sexo == 'M'">Macho</p>
-            <p *ngIf="pet.sexo == 'F'">Fêmea</p>
+            <p *ngIf="pet?.sexo == 'M'">Macho</p>
+            <p *ngIf="pet?.sexo == 'F'">Fêmea</p>
         </div>
         <div class="grid">
             <div class="col-12 md:col-6 lg:col-6">
                 <div class="flex flex-column gap-1 mb-3 text-left ">
                     <label class="text-left font-bold">Nome</label>
-                    <p>{{pet.nome}}</p>
+                    <p>{{pet?.nome}}</p>
                     <label class="text-left font-bold">Raça</label>
-                    <p>{{pet.raca}}</p>
-                    <label class="text-left font-bold">Criadores</label>
-                    <p>{{pet.criadores}}</p>
+                    <p>{{raca?.nome}}</p>
                     <label class="text-left font-bold">Data de Nascimento</label>
-                    <p>{{pet.dataNascimento}}</p>
+                    <p>{{pet?.dataNascimento}}</p>
                     <label class="text-left font-bold">Número do Registro</label>
-                    <p>{{pet.numeroRegistro}}</p>
+                    <p>{{pet?.pedigree}}</p>
                 </div>
             </div>
             <div class="col-12 md:col-6 lg:col-6">
                 <div class="flex flex-column gap-1 mb-3 text-left">
                     <label class="text-left font-bold">Pai</label>
-                    <p>{{pet.pai}}</p>
+                    <p *ngIf="pet?.pai">{{pet?.pai}}</p>
+                    <p *ngIf="!pet?.pai">Desconhecido</p>
                     <label class="text-left font-bold">Mãe</label>
-                    <p>{{pet.mae}}</p>
+                    <p *ngIf="pet?.mae">{{pet?.mae}}</p>
+                    <p *ngIf="!pet?.mae">Desconhecido</p>
                     <label class="text-left font-bold">Cor</label>
-                    <p>{{pet.cor}}</p>
-                    <ng-container *ngIf="pet.sexo == 'F'">
+                    <p>{{cor?.nome}}</p>
+                    <ng-container *ngIf="pet?.Sexo == 'F'">
                     <label class="text-left font-bold">Período da Cruza</label>
-                    <p>{{pet.periodoCruza}}</p>
+                    <p>{{pet?.PeriodoCruza}}</p>
                     <label class="text-left font-bold">Data do Cio</label>
-                    <p>{{pet.dataCio}}</p>
+                    <p>{{pet?.DataCio}}</p>
                     </ng-container>
                 </div>
             </div>

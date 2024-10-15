@@ -1,5 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgIf } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
+import { PetService } from '../../../services/pet.service';
+import { Pet } from '../../../models/pet';
+import { CorService } from '../../../services/cor.service';
+import { RacaService } from '../../../services/raca.service';
 
 @Component({
   selector: 'app-details-pet',
@@ -8,19 +13,43 @@ import { NgIf } from '@angular/common';
   templateUrl: './details-pet.component.html',
   styleUrl: './details-pet.component.css'
 })
-export class DetailsPetComponent {
-  pet = {
-    nome: 'Tommy', 
-    raca: 'Shitzu', 
-    idade: '8',
-    criadores: 'nao sei oq signifca',
-    dataNascimento: '01/10/2002',
-    numeroRegistro: '132456',
-    pai: 'dudao',
-    mae: 'gian',
-    cor: 'preto',
-    periodoCruza: '10/10/2010',
-    dataCio: '10/10/2012',
-    sexo: 'M'
+export class DetailsPetComponent implements OnInit {
+
+  petId?: any;
+  pet?: any;
+  cor?: any;
+  raca?: any;
+
+  constructor(private route: ActivatedRoute, private petService: PetService, private corService: CorService, private racaService: RacaService){}
+
+  ngOnInit() {
+    this.initializeData();
   }
+  
+  initializeData(){
+    this.petId = this.route.snapshot.paramMap.get('id');
+    console.log(this.petId)
+    this.route.params.subscribe(params => {
+      this.petId = +params['id'];
+      this.loadPetDetails(this.petId);
+    });
+  }
+
+  async loadPetDetails(id: number) {
+    await this.petService.getPetById(id).subscribe(pet => {
+      this.pet = pet;
+      console.log(pet)
+      this.corService.getCorById(this.pet.corId).subscribe(cor => {
+        this.cor = cor;
+        this.racaService.getRacaById(this.pet.racaId).subscribe(raca => {
+          this.raca = raca;
+        })
+      })
+    });
+
+    
+
+    
+  }
+
 }

@@ -37,6 +37,7 @@ export class AuthService {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     }).pipe(
       tap((response: any) => {
+        console.log(response)
         localStorage.setItem('token', response.token);
         localStorage.setItem('user', JSON.stringify({
           id: response.userId,

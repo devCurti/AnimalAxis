@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/22ea43f0-412d-4db0-8be0-b21970e863ff/resourceGroups/AnimalAxis/providers/Microsoft.Web/sites/AnimalAxissAPI",
+    "appService.deploySubpath": "dist\\animal-axis"
+}

@@ -11,7 +11,9 @@ export const routes: Routes = [ {path: 'home', component: HomeComponent, canActi
     { path: 'login', component: LoginComponent},
     { path: '', redirectTo: '/login', pathMatch: 'full' },
     { path: 'pet/register', component: RegisterPetComponent, canActivate: [AuthGuard]},
-    { path: 'pet/details', component: DetailsPetComponent, canActivate: [AuthGuard]},
+    { path: 'pet/details/:id', component: DetailsPetComponent, canActivate: [AuthGuard]},
     { path: 'pet/search', component: SearchPetComponent, canActivate: [AuthGuard]},
     { path: 'register', component: RegisterComponent},
+    { path: 'pet/details', component: DetailsPetComponent, canActivate: [AuthGuard]},
+    
  ];
