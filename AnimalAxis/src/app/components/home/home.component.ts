@@ -44,24 +44,11 @@ export class HomeComponent implements OnInit {
 
   items = [
     {
-      label: this.userEmail,
-      url: '',
-      icon: '',
-      route: '/home'
-    },
-    {
       label: 'Configurações',
       url: '',
       icon: '',
       route: '/home'
-    },
-    
-    {
-      label: 'Sair',
-      url: '',
-      icon: '',
-      route: '/home'
-    },
+    }
   ]
 
   ngOnInit(){

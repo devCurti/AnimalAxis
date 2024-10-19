@@ -10,6 +10,7 @@ using AnimalAxis.Models;
 using AnimalAxis.Interfaces;
 using AnimalAxis.Services;
 using System.Security.Claims;
+using AnimalAxis.DTO;
 
 namespace AnimalAxis.Controllers
 {
@@ -31,18 +32,126 @@ namespace AnimalAxis.Controllers
         public async Task<ActionResult<IEnumerable<Pet>>> GetPet()
         {
             var currentUser = _userContext.GetCurrentUserId();
+            /*var pets = await _context.Pet
+                .Where(p => p.UsuarioId == currentUser)
+                .Include(p => p.Raca).ThenInclude(p => p.Nome)
+                .Include(p => p.Cor)
+                .Include(p => p.Pai)
+                .Include(p => p.Mae)
+                .ToListAsync();*/
             var pets = await _context.Pet
                 .Where(p => p.UsuarioId == currentUser)
+                .Include(p => p.Raca)
+                .Select(p => new PetDto
+                {
+                    Id = p.Id,
+                    Nome = p.Nome,
+                    Raca = p.Raca != null ? new RacaDto
+                    {
+                        Id = p.Raca.Id,
+                        Nome = p.Raca.Nome
+                    } : null,
+                    Sexo = p.Sexo,
+                    Pedigree = p.Pedigree,
+                    DataNascimento = p.DataNascimento,
+                    DataDoCio = p.DataDoCio,
+                    PeriodoDaCruza = p.PeriodoDaCruza,
+                    Pai = p.Pai != null ? new PetDto
+                    {
+                        Id = p.Pai.Id,
+                        Nome = p.Pai.Nome,
+                        Sexo = p.Sexo
+                    } : null,
+                    Mae = p.Mae != null ? new PetDto
+                    {
+                        Id = p.Mae.Id,
+                        Nome = p.Mae.Nome,
+                        Sexo = p.Sexo
+                    } : null,
+                    Cor = p.Cor != null ? new CorDto
+                    {
+                        Id = p.Cor.Id,
+                        Nome = p.Nome
+                    } : null
+
+                })
                 .ToListAsync();
+
+            return Ok(pets);
+        }
+
+        // GET: api/Pets/machos
+        [HttpGet("machos")]
+        public async Task<ActionResult<IEnumerable<Pet>>> GetPetMachos()
+        {
+            var currentUser = _userContext.GetCurrentUserId();
+            var pets = await _context.Pet
+                .Where(p => p.UsuarioId == currentUser && p.Sexo == 'M')
+                .ToListAsync();
+
+
+
+            return Ok(pets);
+        }
+
+        // GET: api/Pets/femeas
+        [HttpGet("femeas")]
+        public async Task<ActionResult<IEnumerable<Pet>>> GetPetFemeas()
+        {
+            var currentUser = _userContext.GetCurrentUserId();
+            var pets = await _context.Pet
+                .Where(p => p.UsuarioId == currentUser && p.Sexo == 'F')
+                .ToListAsync();
+
+
 
             return Ok(pets);
         }
 
         // GET: api/Pets/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Pet>> GetPet(int id)
+        public async Task<ActionResult<PetDto>> GetPet(int id)
         {
-            var pet = await _context.Pet.FindAsync(id);
+            var currentUser = _userContext.GetCurrentUserId();
+            var pet = await _context.Pet
+                .Where(p => p.UsuarioId == currentUser && p.Id == id)
+                .Include(p => p.Raca)
+                .Include(p => p.Pai)
+                .Include(p => p.Mae)
+                .Include(p => p.Cor)
+                .Select(p => new PetDto
+                {
+                    Id = p.Id,
+                    Nome = p.Nome,
+                    Raca = p.Raca != null ? new RacaDto
+                    {
+                        Id = p.Raca.Id,
+                        Nome = p.Raca.Nome
+                    } : null,
+                    Sexo = p.Sexo,
+                    Pedigree = p.Pedigree,
+                    DataNascimento = p.DataNascimento,
+                    DataDoCio = p.DataDoCio,
+                    PeriodoDaCruza = p.PeriodoDaCruza,
+                    Pai = p.Pai != null ? new PetDto
+                    {
+                        Id = p.Pai.Id,
+                        Nome = p.Pai.Nome,
+                        Sexo = p.Pai.Sexo // Corrigido para usar p.Pai.Sexo
+                    } : null,
+                    Mae = p.Mae != null ? new PetDto
+                    {
+                        Id = p.Mae.Id,
+                        Nome = p.Mae.Nome,
+                        Sexo = p.Mae.Sexo // Corrigido para usar p.Mae.Sexo
+                    } : null,
+                    Cor = p.Cor != null ? new CorDto
+                    {
+                        Id = p.Cor.Id,
+                        Nome = p.Cor.Nome // Corrigido para usar p.Cor.Nome
+                    } : null
+                })
+                .FirstOrDefaultAsync(); // Altera para FirstOrDefaultAsync para obter um único resultado
 
             if (pet == null)
             {
@@ -94,7 +203,7 @@ namespace AnimalAxis.Controllers
             _context.Pet.Add(pet);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetPet", new { id = pet.Id }, pet);
+            return CreatedAtAction("GetPet", pet);
         }
 
         // DELETE: api/Pets/5

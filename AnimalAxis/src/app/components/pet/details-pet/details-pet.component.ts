@@ -5,11 +5,12 @@ import { PetService } from '../../../services/pet.service';
 import { Pet } from '../../../models/pet';
 import { CorService } from '../../../services/cor.service';
 import { RacaService } from '../../../services/raca.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-details-pet',
   standalone: true,
-  imports: [NgIf],
+  imports: [NgIf, DatePipe],
   templateUrl: './details-pet.component.html',
   styleUrl: './details-pet.component.css'
 })
@@ -39,12 +40,6 @@ export class DetailsPetComponent implements OnInit {
     await this.petService.getPetById(id).subscribe(pet => {
       this.pet = pet;
       console.log(pet)
-      this.corService.getCorById(this.pet.corId).subscribe(cor => {
-        this.cor = cor;
-        this.racaService.getRacaById(this.pet.racaId).subscribe(raca => {
-          this.raca = raca;
-        })
-      })
     });
 
     

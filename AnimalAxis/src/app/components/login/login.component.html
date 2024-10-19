@@ -1,16 +1,19 @@
-<div class="container azulAnimal flex align-items-center justify-content-center overflow-auto">
-    <div class="loginContainer brancoAnimal text-center md:auto md:w-6 p-4 md:p-8 overflow-auto">
-        <div class="p-2 mb-5 p-8">
-            <p>Novo por aqui?</p>
-            <a routerLink="/register">Registre-se</a>
+<div class="container azulAnimal flex align-items-center justify-content-center min-h-screen">
+    <p-toast />
+    <div class="loginContainer brancoAnimal text-center md:auto md:w-6 p-6 md:p-8 shadow-5 border-round-lg transition-all duration-300">
+        <div class="p-2 mb-4">
+            <h1 class="text-3xl font-bold text-gray-800">Animal Axis</h1>
+            <p class="text-sm text-gray-500">Bem-vindo de volta! Faça login para continuar.</p>
         </div>
         <form [formGroup]="loginForm" (ngSubmit)="login()" class="flex flex-column gap-4 mb-3">
-            <label for="email" class="text-left">Endereço de E-mail:</label>
-            <input id="email" type="email" pInputText formControlName="email" />
-            <label for="senha" class="text-left">Senha:</label>
-            <input id="senha" type="password" pInputText formControlName="senha" />
-            <p class="text-right mb-6">Esqueceu sua senha?</p>
-            <button type="submit" class="p-button p-component font-bold text-white bg-green-500 border-none no-underline mt-6">
+            <label for="email" class="text-left font-semibold">Endereço de E-mail:</label>
+            <input id="email" type="email" pInputText formControlName="email" class="border-round-md shadow-2" placeholder="seuemail@exemplo.com" />
+            <label for="senha" class="text-left font-semibold">Senha:</label>
+            <input id="senha" type="password" pInputText formControlName="senha" class="border-round-md shadow-2" placeholder="******" />
+            <p class="text-right mb-4">
+                <a routerLink="/forgot-password" class="text-blue-600 hover:underline">Esqueceu sua senha?</a>
+            </p>
+            <button type="submit" class="p-button p-component font-bold text-white bg-green-600 border-none no-underline mt-4 hover:bg-green-700 transition-all duration-200">
                 <span class="p-button-label">Entrar</span>
             </button>
         </form>

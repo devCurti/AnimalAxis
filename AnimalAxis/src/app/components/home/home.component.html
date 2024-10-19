@@ -1,5 +1,4 @@
-<!--Mobile Navbar-->
-<p-menubar [model]="items" class="md:hidden azulAnimal">
+<p-menubar [model]="items">
     <ng-template pTemplate="item" let-item>
         <ng-container *ngIf="item.route; else urlRef">
             <a [routerLink]="item.route" class="p-menuitem-link">
@@ -21,67 +20,38 @@
             </div>
         </ng-template>
     </ng-template>
-</p-menubar>
-<!--Desktop Navbar-->
-<div class="container grid m-0 overflow-auto">
-    <div class="azulAnimal col-2 p-0 flex-column hidden md:flex overflow-auto" style="height: 100vh;">
-        <div class="text-center mt-7 p-5">
-            <h1>img</h1>
-        </div>
-        <div class="text-center mt-7 text-white font-bold bg-black-alpha-30 w-full p-1">
-            <p><i class="pi pi-user mr-2" style="font-size: 1rem"></i>{{userEmail}}</p>
-        </div>
-        <div class="flex-grow-1"></div>
-        <div class="bottom-100 flex flex-column justify-content-end text-center mb-6 text-white font-bold">
-            <p><i class="pi pi-sliders-v mr-2" style="font-size: 1rem"></i>Configurações</p>
-            <p (click)="logout()"><i class="pi pi-sign-out mr-2" style="font-size: 1rem"></i>Sair</p>
-        </div>
+    <div class="p-menuitem-link mr-5 flex align-items-center">
+        <span class="ml-2">{{user.email}}</span>
+        <span class="ml-2 cursor-pointer" (click)="logout()">Sair</span>
     </div>
-    <div class="brancoAnimal col-12 md:col-10">
-        <div class="m-0 md:m-6 text-center md:text-justify w-auto">
-            <h1>Categorias</h1>
-            <div class="grid m-3">
-                <a routerLink="/pet/search" class="col-12 sm:col-6 md:col-4 lg:col-3 azulAnimal border-round-2xl mb-3 md:m-3 cardPet no-underline">
-                    <div class="m-3 flex flex-column align-items-center justify-content-center text-white">
-                        <i class="pi pi-home text-center" style="font-size: 2rem"></i>
-                        <h2>Meus Pets</h2>
-                    </div>
-                </a>
-                <a routerLink="/pet/register" class="col-12 sm:col-6 md:col-4 lg:col-3 bg-indigo-500 border-round-2xl mb-3 md:m-3 cardPet no-underline">
-                    <div class="m-3 flex flex-column align-items-center justify-content-center text-white">
-                        <i class="pi pi-plus" style="font-size: 2rem"></i>
-                        <h2>Registro Pet</h2>
-                    </div>
-                </a>
-                <div class="col-12 sm:col-6 md:col-4 lg:col-3 bg-primary border-solid border-round-2xl mb-3 md:m-3">
-                    <div class="m-3 flex flex-column align-items-center justify-content-center text-white">
-                        <i class="pi pi-plus" style="font-size: 2rem"></i>
-                        <h2>Registro Pet</h2>
-                    </div>
+</p-menubar>
+
+<div class="brancoAnimal p-4">
+    <div class="m-0 md:m-6 text-center">
+        <h1 class="text-2xl font-bold mb-6">Bem-vindo ao Animal Axis</h1>
+        <div class="grid justify-content-center m-3 gap-3">
+            <a routerLink="/pet/search" class="col-12 sm:col-6 md:col-4 lg:col-3 cardPet bg-primary border-round-2xl mb-4 transition-transform hover:scale-105 shadow-2 h-40 flex align-items-center justify-content-center no-underline">
+                <div class="m-3 flex flex-column align-items-center text-white">
+                    <i class="pi pi-home text-center" style="font-size: 2rem"></i>
+                    <h2 class="text-lg font-semibold">Meus Pets</h2>
                 </div>
-                <div class="col-12 sm:col-6 md:col-4 lg:col-3 bg-primary border-solid border-round-2xl mb-3 md:m-3">
-                    <div class="m-3 flex flex-column align-items-center justify-content-center text-white">
-                        <i class="pi pi-plus" style="font-size: 2rem"></i>
-                        <h2>Registro Pet</h2>
-                    </div>
+            </a>
+            <a routerLink="/pet/register" class="col-12 sm:col-6 md:col-4 lg:col-3 cardPet bg-indigo-500 border-round-2xl mb-4 transition-transform hover:scale-105 shadow-2 h-40 flex align-items-center justify-content-center no-underline">
+                <div class="m-3 flex flex-column align-items-center text-white">
+                    <i class="pi pi-plus" style="font-size: 2rem"></i>
+                    <h2 class="text-lg font-semibold">Registro Pet</h2>
+                </div>
+            </a>
+            <div class="col-12 sm:col-6 md:col-4 lg:col-3 cardPet bg-purple-500 border-round-2xl mb-4 transition-transform hover:scale-105 shadow-2 h-40 flex align-items-center justify-content-center no-underline">
+                <div class="m-3 flex flex-column align-items-center text-white">
+                    <i class="pi pi-heart text-center" style="font-size: 2rem"></i>
+                    <h2 class="text-lg font-semibold">Favoritos</h2>
                 </div>
             </div>
-        </div>
-        
-        <div class="m-6 hidden md:block">
-            <h1>Animais Recentes</h1>
-            <div class="grid" *ngFor="let pet of pets">
-                <div class="col-1 text-center">
-                    <p>img</p>
-                </div>
-                <div class="col-6">
-                    <p>{{pet.nome}}</p>
-                </div>
-                <div class="col-2">
-                    <p>{{pet.raca}}</p>
-                </div>
-                <div class="col-2">
-                    <p>{{pet.idade}}</p>
+            <div class="col-12 sm:col-6 md:col-4 lg:col-3 cardPet bg-orange-500 border-round-2xl mb-4 transition-transform hover:scale-105 shadow-2 h-40 flex align-items-center justify-content-center no-underline">
+                <div class="m-3 flex flex-column align-items-center text-white">
+                    <i class="pi pi-calendar text-center" style="font-size: 2rem"></i>
+                    <h2 class="text-lg font-semibold">Histórico</h2>
                 </div>
             </div>
         </div>

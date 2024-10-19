@@ -1,5 +1,5 @@
 <div class="container azulAnimal p-4 overflow-auto flex flex-column align-items-center justify-content-center">
-    <div class="brancoAnimal text-center w-11 p-4 md:p-8 overflow-auto">
+    <div class="brancoAnimal text-center w-11 p-4 md:p-8 overflow-auto border-round shadow-4">
         <div class="p-2 mb-5">
             <h1 class="text-xl md:text-2xl">Meus Pets</h1>
         </div>
@@ -9,14 +9,14 @@
                 <tr>
                     <th style="width:40%">Nome</th>
                     <th style="width:40%">Raça</th>
-                    <th style="width:20%">Idade</th>
+                    <th style="width:20%">Sexo</th>
                 </tr>
             </ng-template>
             <ng-template pTemplate="body" let-pet>
                 <tr (click)="viewDetails(pet)">
                     <td>{{ pet.nome }}</td>
-                    <td>{{ pet.raca }}</td>
-                    <td>{{ pet.idade }}</td>
+                    <td>{{ pet.raca.nome }}</td>
+                    <td>{{pet.sexo == "M" ? 'Macho' : 'Fêmea'}}</td>
                 </tr>
             </ng-template>
         </p-table>

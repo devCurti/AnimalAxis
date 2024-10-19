@@ -23,11 +23,13 @@ export class SearchPetComponent implements OnInit{
 
   ngOnInit(): void {
     this.initializeData();
+    
   }
 
   initializeData(){
     this.petService.getPets().subscribe(pets => {
       this.pets = pets;
+      console.log(this.pets);
     })
   }
 

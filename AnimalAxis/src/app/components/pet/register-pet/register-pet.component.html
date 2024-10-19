@@ -1,5 +1,6 @@
 <div class="container azulAnimal p-4 overflow-auto flex flex-column align-items-center justify-content-center">
-    <div class="brancoAnimal text-center w-11 p-4 md:p-8 overflow-auto">
+    <p-toast />
+    <div class="brancoAnimal text-center w-11 p-4 md:p-8 overflow-auto border-round shadow-4">
         <div class="p-2 mb-5">
             <h1 class="text-xl md:text-2xl">Registro Pet</h1>
         </div>
@@ -36,8 +37,6 @@
                         </div>
                     </div>
 
-                    <label for="criadores" class="text-left">Criadores</label>
-                    <input id="criadores" type="text" pInputText formControlName="criadores" />
                     <div class="grid grid-nogutter">
                         <div class="col-12 md:col-6 text-left mb-3 md:mb-0">
                             <div class="mb-3">
@@ -55,17 +54,46 @@
                 </div>
             </div>
             <div class="col-12 md:col-6 lg:col-6">
+
                 <div [formGroup]="petForm" class="flex flex-column gap-3 mb-3">
-                    <label for="pai" class="text-left">Pai</label>
-                    <input id="pai" type="text" pInputText formControlName="pai" />
-                    <label for="mae" class="text-left">Mãe</label>
-                    <input id="mae" type="text" pInputText formControlName="mae" />
-                    <ng-container *ngIf="sexo == false">
-                        <label for="periodoDaCruza" class="text-left">Período da Cruza</label>
-                        <input id="periodoDaCruza" type="text" pInputText formControlName="periodoDeCruza" />
-                        <label for="dataDoCio" class="text-left">Data do Cio</label>
-                        <input id="dataDoCio" type="text" pInputText formControlName="dataDoCio" />
-                    </ng-container>
+                    <div class="grid grid-nogutter">
+                        <div class="col-12 md:col-6 text-left mb-3 md:mb-0">
+                            <div class="mb-3">
+                                <label for="pai" class="text-left">Pai</label>
+                            </div>
+                            <p-dropdown class="text-left w-full" [options]="pais" formControlName="pai"
+                                optionLabel="nome" [filter]="true" filterBy="nome" [showClear]="true"
+                                placeholder="Selecione o pai" id="pai">
+                            </p-dropdown>
+                        </div>
+
+                        <div class="col-12 md:col-6 text-left">
+                            <div class="text-left mb-3">
+                                <label for="mae" class="text-left">Mãe</label>
+                            </div>
+                            <p-dropdown class="text-left w-full" [options]="maes" formControlName="mae"
+                                optionLabel="nome" [filter]="true" filterBy="nome" [showClear]="true"
+                                placeholder="Selecione a mãe" id="mae">
+                            </p-dropdown>
+                        </div>
+                    </div>
+                    <div class="grid grid-nogutter">
+                        <ng-container *ngIf="sexo == false">
+                            <div class="col-12 md:col-6 text-left mb-3 md:mb-0">
+                                <div class="mb-3">
+                                    <label for="periodoDaCruza" class="text-left">Período da Cruza</label>
+                                </div>
+                                <p-calendar formControlName="periodoDeCruza" class="text-left" />
+                            </div>
+
+                            <div class="col-12 md:col-6 text-left mb-3 md:mb-0">
+                                <div class="mb-3">
+                                    <label for="dataDoCio" class="text-left">Data do Cio</label>
+                                </div>
+                                <p-calendar formControlName="dataDoCio" class="text-left" />
+                            </div>
+                        </ng-container>
+                    </div>
                 </div>
             </div>
         </div>

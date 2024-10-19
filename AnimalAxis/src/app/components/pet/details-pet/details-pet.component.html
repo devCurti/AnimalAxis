@@ -1,49 +1,46 @@
 <div class="container azulAnimal p-4 overflow-auto flex flex-column align-items-center justify-content-center">
-    <div class="brancoAnimal text-center w-11 p-4 md:p-8 overflow-auto">
+    <div class="brancoAnimal text-center w-11 p-4 md:p-8 overflow-auto shadow-2 border-round-lg border-round shadow-4">
         <div class="p-2 mb-5">
-            <h1 class="text-xl md:text-2xl">{{pet?.nome}}</h1>
+            <h1 class="text-xl md:text-2xl">{{ pet?.nome }}</h1>
         </div>
-        <div class="text-left">
-            <label class="text-left font-bold">Sexo</label>
-            <p *ngIf="pet?.sexo == 'M'">Macho</p>
-            <p *ngIf="pet?.sexo == 'F'">Fêmea</p>
-        </div>
-        <div class="grid">
-            <div class="col-12 md:col-6 lg:col-6">
-                <div class="flex flex-column gap-1 mb-3 text-left ">
-                    <label class="text-left font-bold">Nome</label>
-                    <p>{{pet?.nome}}</p>
-                    <label class="text-left font-bold">Raça</label>
-                    <p>{{raca?.nome}}</p>
-                    <label class="text-left font-bold">Data de Nascimento</label>
-                    <p>{{pet?.dataNascimento}}</p>
-                    <label class="text-left font-bold">Número do Registro</label>
-                    <p>{{pet?.pedigree}}</p>
+        <div class="grid mt-3 gap-4">
+            <div class="col-12 md:col-6">
+                <div class="flex flex-column gap-1">
+                    <label class="font-bold">Nome:</label>
+                    <p>{{ pet?.nome }}</p>
+                    <label class="font-bold">Raça:</label>
+                    <p>{{ pet?.raca?.nome }}</p>
+                    <label class="font-bold">Data de Nascimento:</label>
+                    <p>{{ pet?.dataNascimento | date: 'dd/MM/yyyy' }}</p>
+                    <label class="font-bold">Número do Registro:</label>
+                    <p>{{ pet?.pedigree }}</p>
                 </div>
             </div>
-            <div class="col-12 md:col-6 lg:col-6">
-                <div class="flex flex-column gap-1 mb-3 text-left">
-                    <label class="text-left font-bold">Pai</label>
-                    <p *ngIf="pet?.pai">{{pet?.pai}}</p>
+            <div class="col-12 md:col-5">
+                <div class="flex flex-column gap-1">
+                    <label class="font-bold">Sexo:</label>
+                    <p *ngIf="pet?.sexo === 'M'">Macho</p>
+                    <p *ngIf="pet?.sexo === 'F'">Fêmea</p>
+                    <label class="font-bold">Pai:</label>
+                    <p *ngIf="pet?.pai">{{ pet?.pai.nome }}</p>
                     <p *ngIf="!pet?.pai">Desconhecido</p>
-                    <label class="text-left font-bold">Mãe</label>
-                    <p *ngIf="pet?.mae">{{pet?.mae}}</p>
+                    <label class="font-bold">Mãe:</label>
+                    <p *ngIf="pet?.mae">{{ pet?.mae.nome }}</p>
                     <p *ngIf="!pet?.mae">Desconhecido</p>
-                    <label class="text-left font-bold">Cor</label>
-                    <p>{{cor?.nome}}</p>
-                    <ng-container *ngIf="pet?.Sexo == 'F'">
-                    <label class="text-left font-bold">Período da Cruza</label>
-                    <p>{{pet?.PeriodoCruza}}</p>
-                    <label class="text-left font-bold">Data do Cio</label>
-                    <p>{{pet?.DataCio}}</p>
+                    <label class="font-bold">Cor:</label>
+                    <p>{{ pet?.cor?.nome }}</p>
+                    <ng-container *ngIf="pet?.sexo === 'F'">
+                        <label class="font-bold">Período da Cruza:</label>
+                        <p>{{ pet?.periodoCruza }}</p>
+                        <label class="font-bold">Data do Cio:</label>
+                        <p>{{ pet?.dataCio | date: 'dd/MM/yyyy' }}</p>
                     </ng-container>
                 </div>
             </div>
         </div>
-        <div class="grid mt-7">
+        <div class="grid mt-5">
             <div class="col-12">
-                <a routerLink="/home"
-                    class="p-button p-component font-bold text-white bg-green-500 border-none no-underline w-8 py-3 text-base md:text-lg">
+                <a routerLink="/home" class="p-button p-component font-bold text-white bg-green-500 border-none no-underline w-full py-3 text-base md:text-lg">
                     <span class="p-button-label">Editar Pet</span>
                 </a>
             </div>

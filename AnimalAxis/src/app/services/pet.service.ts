@@ -26,6 +26,14 @@ export class PetService {
     return this.http.get<Pet[]>(this.apiUrl, { headers: this.getHeaders() });
   }
 
+  getPetsMachos(): Observable<Pet[]> {
+    return this.http.get<Pet[]>(`${this.apiUrl}/machos`, { headers: this.getHeaders() });
+  }
+
+  getPetsFemeas(): Observable<Pet[]> {
+    return this.http.get<Pet[]>(`${this.apiUrl}/femeas`, { headers: this.getHeaders() });
+  }
+
   addPet(pet: Pet): Observable<Pet> {
     console.log(pet)
     return this.http.post<Pet>(this.apiUrl, pet, { headers: this.getHeaders() });

@@ -212,7 +212,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "AnimalAxis.Models.Pet",
+        "Type": "AnimalAxis.DTO.PetDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -258,6 +258,46 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AnimalAxis.Controllers.PetsController",
+    "Method": "GetPetFemeas",
+    "RelativePath": "api/Pets/femeas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[AnimalAxis.Models.Pet, AnimalAxis, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AnimalAxis.Controllers.PetsController",
+    "Method": "GetPetMachos",
+    "RelativePath": "api/Pets/machos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[AnimalAxis.Models.Pet, AnimalAxis, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "AnimalAxis.Controllers.RacasController",
