@@ -1,109 +1,123 @@
-<div class="container azulAnimal p-4 overflow-auto flex flex-column align-items-center justify-content-center">
-    <p-toast />
-    <div class="brancoAnimal text-center w-11 p-4 md:p-8 overflow-auto border-round shadow-4">
-        <div class="p-2 mb-5">
-            <h1 class="text-xl md:text-2xl">Registro Pet</h1>
-        </div>
-        <div [formGroup]="petForm" class="text-left mb-3">
-            <p *ngIf="sexo == true">Macho</p>
-            <p *ngIf="sexo == false">Fêmea</p>
-            <p-inputSwitch formControlName="sexo" />
-        </div>
-        <div class="grid">
-            <div class="col-12 md:col-6 lg:col-6">
-                <div [formGroup]="petForm" class="flex flex-column gap-3 mb-3">
-                    <label for="nome" class="text-left">Nome</label>
-                    <input id="nome" type="text" pInputText formControlName="nome" />
+<div class="container azulAnimal p-5 flex flex-column align-items-center justify-content-center overflow-auto">
+    <p-toast></p-toast>
+    <div class="brancoAnimal text-center w-full md:w-10 p-6 md:p-8 border-round md:shadow-4 bg-white transition-shadow overflow-auto">
+        <h1 class="text-4xl font-bold text-teal-600 tracking-wide mb-6">
+            {{ petId ? 'Edição de Pet' : 'Registro Pet' }}
+        </h1>
+        <h1 class="text-2xl font-semibold" *ngIf="petId">{{ this.pet?.nome }}</h1>
 
-                    <div class="grid grid-nogutter">
-                        <div class="col-12 md:col-6 text-left mb-3 md:mb-0">
-                            <div class="mb-3">
-                                <label for="raca" class="text-left">Raça</label>
+        <form [formGroup]="petForm" class="text-left mb-5">
+            <div class="flex flex-column align-items-center mb-3 p-4 border border-gray-300 rounded-lg shadow-md bg-gray-50">
+                <span class="font-semibold mb-2">Gênero:</span>
+                <div class="flex flex-wrap justify-content-center">
+                    <label class="flex flex-column align-items-center mr-4">
+                        <input type="radio" formControlName="sexo" value="true" (change)="sexo = true" class="hidden" />
+                        <div class="p-button p-component p-button-info p-button-rounded p-button-text gender-button 
+                            transition-colors duration-200 hover:bg-green-300"
+                            [ngClass]="{'bg-green-500 text-white': sexo}">
+                            <span class="p-button-label">Macho</span>
+                        </div>
+                    </label>
+                    <label class="flex flex-column align-items-center">
+                        <input type="radio" formControlName="sexo" value="false" (change)="sexo = false" class="hidden" />
+                        <div class="p-button p-component p-button-warning p-button-rounded p-button-text gender-button 
+                            transition-colors duration-200 hover:bg-pink-300"
+                            [ngClass]="{'bg-pink-500 text-white': !sexo}">
+                            <span class="p-button-label">Fêmea</span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="grid grid-nogutter">
+                <div class="col-12 md:col-6 mb-4 pr-4">
+                    <div class="mb-4">
+                        <label for="nome" class="font-semibold">Nome</label>
+                    </div>
+                    <input id="nome" type="text" pInputText formControlName="nome" class="p-inputtext-sm w-full" />
+
+                    <div class="grid grid-nogutter mt-3">
+                        <div class="col-12 md:col-6 mb-3">
+                            <div class="mb-4">
+                                <label for="raca" class="font-semibold">Raça</label>
                             </div>
-                            <p-dropdown class="text-left w-full" [options]="racas" formControlName="raca"
-                                optionLabel="nome" [filter]="true" filterBy="nome" [showClear]="true"
-                                placeholder="Selecione uma raça" id="raca">
-                            </p-dropdown>
+                            <p-dropdown [options]="racas" formControlName="raca" optionLabel="nome" [filter]="true"
+                                filterBy="nome" [showClear]="true" placeholder="Selecione uma raça" id="raca"
+                                class="w-full" />
                         </div>
 
-                        <div class="col-12 md:col-6 text-left">
-                            <div class="text-left mb-3">
-                                <label for="cor" class="text-left">Cor</label>
+                        <div class="col-12 md:col-6 mb-3">
+                            <div class="mb-4">
+                                <label for="cor" class="font-semibold">Cor</label>
                             </div>
-                            <p-dropdown class="text-left w-full" [options]="cores" formControlName="cor"
-                                optionLabel="nome" [filter]="true" filterBy="nome" [showClear]="true"
-                                placeholder="Selecione uma cor" id="cor">
-                            </p-dropdown>
+                            <p-dropdown [options]="cores" formControlName="cor" optionLabel="nome" [filter]="true"
+                                filterBy="nome" [showClear]="true" placeholder="Selecione uma cor" id="cor"
+                                class="w-full" />
                         </div>
                     </div>
 
                     <div class="grid grid-nogutter">
-                        <div class="col-12 md:col-6 text-left mb-3 md:mb-0">
-                            <div class="mb-3">
-                                <label for="dataDeNascimento" class="text-left">Data de Nascimento</label>
+                        <div class="col-12 md:col-6 mb-3">
+                            <div class="mb-4">
+                                <label for="dataDeNascimento" class="font-semibold">Data de Nascimento</label>
                             </div>
-                            <p-calendar formControlName="dataDeNascimento" class="text-left" />
+                            <p-calendar formControlName="dataDeNascimento" [showIcon]="true" dateFormat="dd/mm/yy" />
                         </div>
-                        <div class="col-12 md:col-6 text-left mb-3 md:mb-0">
-                            <div class="mb-3">
-                                <label for="numeroDoRegistro" class="text-left">Número do Registro</label>
+                        <div class="col-12 md:col-6 mb-3">
+                            <div class="mb-4">
+                                <label for="numeroDoRegistro" class="font-semibold">Número do Registro</label>
                             </div>
-                            <input id="numeroDoRegistro" type="text" pInputText formControlName="numeroDoRegistro" />
+                            <input id="numeroDoRegistro" type="text" pInputText formControlName="numeroDoRegistro"
+                                class="p-inputtext-sm w-full" />
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-12 md:col-6 lg:col-6">
 
-                <div [formGroup]="petForm" class="flex flex-column gap-3 mb-3">
+                <div class="col-12 md:col-6 mb-4">
                     <div class="grid grid-nogutter">
-                        <div class="col-12 md:col-6 text-left mb-3 md:mb-0">
-                            <div class="mb-3">
-                                <label for="pai" class="text-left">Pai</label>
+                        <div class="col-12 md:col-6 mb-4">
+                            <div class="mb-4">
+                                <label for="pai" class="font-semibold">Pai</label>
                             </div>
-                            <p-dropdown class="text-left w-full" [options]="pais" formControlName="pai"
-                                optionLabel="nome" [filter]="true" filterBy="nome" [showClear]="true"
-                                placeholder="Selecione o pai" id="pai">
-                            </p-dropdown>
+                            <p-dropdown [options]="pais" formControlName="pai" optionLabel="nome" [filter]="true"
+                                filterBy="nome" [showClear]="true" placeholder="Selecione o pai" id="pai"
+                                class="w-full" />
                         </div>
-
-                        <div class="col-12 md:col-6 text-left">
-                            <div class="text-left mb-3">
-                                <label for="mae" class="text-left">Mãe</label>
+                        <div class="col-12 md:col-6 mb-4">
+                            <div class="mb-4">
+                                <label for="mae" class="font-semibold">Mãe</label>
                             </div>
-                            <p-dropdown class="text-left w-full" [options]="maes" formControlName="mae"
-                                optionLabel="nome" [filter]="true" filterBy="nome" [showClear]="true"
-                                placeholder="Selecione a mãe" id="mae">
-                            </p-dropdown>
+                            <p-dropdown [options]="maes" formControlName="mae" optionLabel="nome" [filter]="true"
+                                filterBy="nome" [showClear]="true" placeholder="Selecione a mãe" id="mae"
+                                class="w-full" />
                         </div>
                     </div>
-                    <div class="grid grid-nogutter">
-                        <ng-container *ngIf="sexo == false">
-                            <div class="col-12 md:col-6 text-left mb-3 md:mb-0">
-                                <div class="mb-3">
-                                    <label for="periodoDaCruza" class="text-left">Período da Cruza</label>
-                                </div>
-                                <p-calendar formControlName="periodoDeCruza" class="text-left" />
-                            </div>
 
-                            <div class="col-12 md:col-6 text-left mb-3 md:mb-0">
-                                <div class="mb-3">
-                                    <label for="dataDoCio" class="text-left">Data do Cio</label>
+                    <ng-container *ngIf="!sexo">
+                        <div class="grid grid-nogutter">
+                            <div class="col-12 md:col-6 mb-3">
+                                <div class="mb-4">
+                                    <label for="periodoDeCruza" class="font-semibold">Período da Cruza</label>
                                 </div>
-                                <p-calendar formControlName="dataDoCio" class="text-left" />
+                                <p-calendar formControlName="periodoDeCruza" [showIcon]="true" dateFormat="dd/mm/yy" />
                             </div>
-                        </ng-container>
-                    </div>
+                            <div class="col-12 md:col-6 mb-3">
+                                <div class="mb-4">
+                                    <label for="dataDoCio" class="font-semibold">Data do Cio</label>
+                                </div>
+                                <p-calendar formControlName="dataDoCio" [showIcon]="true" dateFormat="dd/mm/yy" />
+                            </div>
+                        </div>
+                    </ng-container>
                 </div>
             </div>
-        </div>
-        <div class="grid">
-            <div class="col-12">
+
+            <div class="flex justify-content-center mt-5">
                 <button (click)="cadastrarPet()"
-                    class="p-button p-component font-bold text-white bg-green-500 border-none no-underline w-8 py-3 text-base md:text-lg">
-                    <span class="p-button-label">Cadastrar Novo Pet</span>
+                    class="p-button p-component font-bold text-white bg-green-600 hover:bg-green-700 transition-colors duration-200 border-none w-full py-3 text-base md:text-lg">
+                    <span class="p-button-label">{{ petId ? 'Editar Pet' : 'Cadastrar Novo Pet' }}</span>
                 </button>
             </div>
-        </div>
+        </form>
     </div>
 </div>

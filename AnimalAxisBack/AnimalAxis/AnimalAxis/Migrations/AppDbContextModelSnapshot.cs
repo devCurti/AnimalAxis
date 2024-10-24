@@ -17,7 +17,7 @@ namespace AnimalAxis.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.8")
+                .HasAnnotation("ProductVersion", "8.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -37,6 +37,43 @@ namespace AnimalAxis.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Cor");
+                });
+
+            modelBuilder.Entity("AnimalAxis.Models.Nascimento", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("MaeId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Observacao")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("PaiId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("PrevisaoNascimento")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("numFilhotes")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MaeId");
+
+                    b.HasIndex("PaiId");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("Nascimento");
                 });
 
             modelBuilder.Entity("AnimalAxis.Models.Pet", b =>
@@ -139,6 +176,31 @@ namespace AnimalAxis.Migrations
                     b.ToTable("Usuarios");
                 });
 
+            modelBuilder.Entity("AnimalAxis.Models.Nascimento", b =>
+                {
+                    b.HasOne("AnimalAxis.Models.Pet", "Mae")
+                        .WithMany("Nascimento")
+                        .HasForeignKey("MaeId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("AnimalAxis.Models.Pet", "Pai")
+                        .WithMany()
+                        .HasForeignKey("PaiId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("AnimalAxis.Models.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Mae");
+
+                    b.Navigation("Pai");
+
+                    b.Navigation("Usuario");
+                });
+
             modelBuilder.Entity("AnimalAxis.Models.Pet", b =>
                 {
                     b.HasOne("AnimalAxis.Models.Cor", "Cor")
@@ -183,6 +245,11 @@ namespace AnimalAxis.Migrations
             modelBuilder.Entity("AnimalAxis.Models.Cor", b =>
                 {
                     b.Navigation("Pets");
+                });
+
+            modelBuilder.Entity("AnimalAxis.Models.Pet", b =>
+                {
+                    b.Navigation("Nascimento");
                 });
 
             modelBuilder.Entity("AnimalAxis.Models.Raca", b =>

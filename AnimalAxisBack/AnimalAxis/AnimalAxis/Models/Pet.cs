@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AnimalAxis.Models
 {
@@ -32,5 +33,6 @@ namespace AnimalAxis.Models
         public DateTime? DataDoCio { get; set; }
         public required int UsuarioId { get; set; }
         public virtual Usuario? Usuario { get; set; }
+        public virtual IList<Nascimento>? Nascimento { get; set; }
     }
 }

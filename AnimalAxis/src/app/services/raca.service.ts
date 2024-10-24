@@ -17,7 +17,6 @@ export class RacaService {
   }
 
   addRacas(raca: Raca): Observable<Raca> {
-    console.log(raca)
     return this.http.post<Raca>(this.apiUrl, raca);
   }
 

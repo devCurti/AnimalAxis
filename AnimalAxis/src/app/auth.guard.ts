@@ -10,13 +10,13 @@ export class AuthGuard implements CanActivate {
 
   constructor(private authService: AuthService, private router: Router) { }
 
-  canActivate(): boolean {
+  async canActivate(): Promise<boolean> {
     const token = localStorage.getItem('token');
-    console.log(token);
 
     const currentRoute = this.router.url;
 
     // Se o usuário estiver logado (token existe)
+    await this.authService.verifyAuth();
     if (!token) {
       this.router.navigate(['/login']);
       return false;

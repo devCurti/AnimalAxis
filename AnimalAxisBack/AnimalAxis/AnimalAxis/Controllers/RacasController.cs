@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AnimalAxis.Data;
 using AnimalAxis.Models;
+using AnimalAxis.DTO;
 
 namespace AnimalAxis.Controllers
 {
@@ -23,9 +24,17 @@ namespace AnimalAxis.Controllers
 
         // GET: api/Racas
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Raca>>> GetRaca()
+        public async Task<ActionResult<IEnumerable<RacaDto>>> GetRaca()
         {
-            return await _context.Raca.ToListAsync();
+            var racas = await _context.Raca
+                .Select(p => new RacaDto
+                {
+                    Id = p.Id,
+                    Nome = p.Nome
+                })
+                .ToListAsync();
+
+            return Ok(racas);
         }
 
         // GET: api/Racas/5

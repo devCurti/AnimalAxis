@@ -1,4 +1,5 @@
 ﻿using AnimalAxis.Interfaces;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
@@ -26,8 +27,12 @@ namespace AnimalAxis.Services
                     return userId;
                 }
             }
+            else
+            {
+                return -1;
+            }
 
-            throw new UnauthorizedAccessException("Usuário não autenticado.");
+            return 0;
         }
     }
 }

@@ -1,0 +1,58 @@
+<div class="container azulAnimal p-5 flex flex-column align-items-center justify-content-center">
+    <p-toast></p-toast>
+    <div class="brancoAnimal text-center w-full md:w-10 p-6 md:p-8 border-round shadow-4 bg-white transition-shadow">
+        <h1 class="text-4xl font-bold mb-6 text-teal-600" *ngIf="!nascimentoId">Registro de Nascimento</h1>
+        <h1 class="text-4xl font-bold mb-6 text-teal-600" *ngIf="nascimentoId">Edição de Nascimento</h1>
+        <form [formGroup]="nascimentoForm" class="gap-4">
+            <div class="grid grid-nogutter">
+                <div class="col-12 md:col-6 mb-4">
+                    <div class="mb-4">
+                        <label for="pai" class="text-left font-semibold text-lg mb-2">Pai</label>
+                    </div>
+                    <p-dropdown [options]="pais" formControlName="pai" optionLabel="nome" [filter]="true"
+                        filterBy="nome" [showClear]="true" placeholder="Selecione o pai" id="pai"
+                        class="w-full p-inputtext-sm" optionValue="id">
+                    </p-dropdown>
+                </div>
+                <div class="col-12 md:col-6 mb-4">
+                    <div class="mb-4">
+                        <label for="mae" class="text-left font-semibold text-lg mb-2">Mãe</label>
+                    </div>
+                    <p-dropdown [options]="maes" formControlName="mae" optionLabel="nome" [filter]="true"
+                        filterBy="nome" [showClear]="true" placeholder="Selecione a mãe" id="mae" optionValue="id"
+                        class="w-full p-inputtext-sm">
+                    </p-dropdown>
+                </div>
+                <div class="col-12 md:col-6 mb-4">
+                    <div class="mb-4">
+                        <label for="previsaoNascimento" class="text-left font-semibold text-lg mb-2">Previsão de
+                            Parto</label>
+                    </div>
+                    <p-calendar formControlName="previsaoNascimento" [showIcon]="true" dateFormat="dd/mm/yy"
+                        id="previsaoNascimento" class="w-full"></p-calendar>
+                </div>
+                <div class="col-12 md:col-6 mb-4">
+                    <div class="mb-4">
+                        <label for="numFilhotes" class="font-semibold text-lg mb-2">Número de Filhotes</label>
+                    </div>
+                    <p-inputNumber formControlName="numFilhotes" [min]="1" [max]="15" class=""></p-inputNumber>
+                </div>
+                <div class="col-12 mb-4">
+                    <div class="mb-4">
+                        <label for="observacoes" class="font-semibold text-lg mb-2">Observações</label>
+                    </div>
+                    <textarea rows="5" cols="20" pInputTextarea formControlName="observacoes"
+                        class="w-full border-round"></textarea>
+                </div>
+            </div>
+
+            <div class="flex justify-content-center mt-5">
+                <button (click)="cadastrarNascimento()"
+                    class="p-button p-component font-bold text-white bg-teal-500 hover:bg-teal-700 transition-colors duration-200 border-none w-full py-3 text-base md:text-lg">
+                    <span class="p-button-label" *ngIf="!nascimentoId">Cadastrar Nascimento</span>
+                    <span class="p-button-label" *ngIf="nascimentoId">Editar Nascimento</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

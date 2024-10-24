@@ -11,7 +11,7 @@ export interface Pet {
     PaiId: Pet,
     MaeId: Pet,
     CorId: number,
-    PeriodoCruza?: Date,
-    DataCio?: Date,
+    PeriodoDaCruza?: Date,
+    DataDoCio?: Date,
     UsuarioId?: number
 }

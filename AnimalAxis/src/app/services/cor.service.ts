@@ -18,7 +18,6 @@ export class CorService {
   }
 
   addCor(cor: Cor): Observable<Cor> {
-    console.log(cor)
     return this.http.post<Cor>(this.apiUrl, cor);
   }
 

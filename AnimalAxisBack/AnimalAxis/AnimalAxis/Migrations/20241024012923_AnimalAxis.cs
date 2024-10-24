@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace AnimalAxis.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class AnimalAxis : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -106,6 +106,57 @@ namespace AnimalAxis.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Nascimento",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PaiId = table.Column<int>(type: "int", nullable: true),
+                    MaeId = table.Column<int>(type: "int", nullable: true),
+                    Observacao = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    numFilhotes = table.Column<int>(type: "int", nullable: false),
+                    PrevisaoNascimento = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    UsuarioId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Nascimento", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Nascimento_Pet_MaeId",
+                        column: x => x.MaeId,
+                        principalTable: "Pet",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Nascimento_Pet_PaiId",
+                        column: x => x.PaiId,
+                        principalTable: "Pet",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Nascimento_Usuarios_UsuarioId",
+                        column: x => x.UsuarioId,
+                        principalTable: "Usuarios",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Nascimento_MaeId",
+                table: "Nascimento",
+                column: "MaeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Nascimento_PaiId",
+                table: "Nascimento",
+                column: "PaiId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Nascimento_UsuarioId",
+                table: "Nascimento",
+                column: "UsuarioId");
+
             migrationBuilder.CreateIndex(
                 name: "IX_Pet_CorId",
                 table: "Pet",
@@ -135,6 +186,9 @@ namespace AnimalAxis.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Nascimento");
+
             migrationBuilder.DropTable(
                 name: "Pet");
 

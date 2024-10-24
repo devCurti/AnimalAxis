@@ -1,22 +1,39 @@
-<div class="container azulAnimal p-4 overflow-auto flex flex-column align-items-center justify-content-center">
-    <div class="brancoAnimal text-center w-11 p-4 md:p-8 overflow-auto border-round shadow-4">
+<div class="container azulAnimal p-5 flex flex-column align-items-center justify-content-center">
+    <div class="brancoAnimal text-center w-full md:w-10 p-6 md:p-8 border-round shadow-4 bg-white transition-shadow">
         <div class="p-2 mb-5">
-            <h1 class="text-xl md:text-2xl">Meus Pets</h1>
+            <h1 class="text-3xl font-bold mb-6 text-gray-800 tracking-wide">Meus Pets</h1>
         </div>
-        <p-table [value]="pets" [paginator]="true" [rows]="5" [tableStyle]="{ 'min-width': '50rem' }"
-            [rowsPerPageOptions]="[5, 10, 20]">
+
+        <div class="flex justify-content-end mb-4">
+            <button pButton label="Adicionar Pet" icon="pi pi-plus" 
+                    class="p-button-rounded p-button-success p-button-md transition-transform hover:scale-120"
+                    (click)="addPet()"></button>
+        </div>
+        
+        <p-table [value]="pets" [paginator]="true" [rows]="5" 
+                 [tableStyle]="{ 'min-width': '60rem' }"
+                 [rowsPerPageOptions]="[5, 10, 20]"
+                 [globalFilterFields]="['nome', 'raca.nome', 'sexo']"
+                 class="shadow-2 border-round">
             <ng-template pTemplate="header">
-                <tr>
-                    <th style="width:40%">Nome</th>
-                    <th style="width:40%">Raça</th>
-                    <th style="width:20%">Sexo</th>
+                <tr class="bg-teal-100 text-teal-700">
+                    <th style="width:40%" class="text-left">Nome</th>
+                    <th style="width:40%" class="text-left">Raça</th>
+                    <th style="width:20%" class="text-left">Sexo</th>
                 </tr>
             </ng-template>
             <ng-template pTemplate="body" let-pet>
-                <tr (click)="viewDetails(pet)">
-                    <td>{{ pet.nome }}</td>
-                    <td>{{ pet.raca.nome }}</td>
-                    <td>{{pet.sexo == "M" ? 'Macho' : 'Fêmea'}}</td>
+                <tr (click)="viewDetails(pet)" class="cursor-pointer hover:bg-teal-100 transition-colors hover:text-teal-700">
+                    <td class="flex align-items-center">
+                        <i class="pi pi-paw mr-2 text-teal-500" style="font-size: 1.2rem;"></i>
+                        <span class="text-lg font-medium">{{ pet.nome }}</span>
+                    </td>
+                    <td>
+                        <span class="text-md">{{ pet.raca.nome }}</span>
+                    </td>
+                    <td>
+                        <span class="text-md">{{ pet.sexo === 'M' ? 'Macho' : 'Fêmea' }}</span>
+                    </td>
                 </tr>
             </ng-template>
         </p-table>

@@ -8,6 +8,8 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Usuario } from '../models/usuario';
 import { tap } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -37,7 +39,6 @@ export class AuthService {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     }).pipe(
       tap((response: any) => {
-        console.log(response)
         localStorage.setItem('token', response.token);
         localStorage.setItem('user', JSON.stringify({
           id: response.userId,
@@ -48,14 +49,24 @@ export class AuthService {
   }
 
   register(usuario: Usuario): Observable<Usuario> {
-    console.log(usuario)
     return this.http.post<Usuario>(`${this.apiUrl}/register`, usuario);
   }
 
-  verifyAuth(){
+  async verifyAuth() {
     const token = localStorage.getItem('token');
-    if(token){
-      this.router.navigate(['/home']);
-    }
-  }
+
+    await this.http.get<Usuario>(`${this.apiUrl}/verifyAuth`, {
+        headers: new HttpHeaders({
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        })
+    }).pipe(
+        catchError(error => {
+            this.router.navigate(['/login']);
+            return of(null);
+        })
+    ).subscribe(x => {
+        console.log('Autenticado!');
+    });
+}
 }

@@ -17,7 +17,6 @@ export class UsuarioService {
   }
 
   addUsuario(usuario: Usuario): Observable<Usuario> {
-    console.log(usuario)
     return this.http.post<Usuario>(this.apiUrl, usuario);
   }
 

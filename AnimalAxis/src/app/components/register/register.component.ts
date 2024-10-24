@@ -37,7 +37,6 @@ export class RegisterComponent {
       let usuario: Usuario = {email: email, password: senha, name: '', phone: ''}
       await this.auth.register(usuario).subscribe({
         next: response => {
-          console.log('Usuário adicionado com sucesso:', response);
           this.router.navigate(['/login']);
         },
         error: error => {

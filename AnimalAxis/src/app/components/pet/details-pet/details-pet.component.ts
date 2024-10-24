@@ -6,6 +6,7 @@ import { Pet } from '../../../models/pet';
 import { CorService } from '../../../services/cor.service';
 import { RacaService } from '../../../services/raca.service';
 import { DatePipe } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-details-pet',
@@ -21,7 +22,7 @@ export class DetailsPetComponent implements OnInit {
   cor?: any;
   raca?: any;
 
-  constructor(private route: ActivatedRoute, private petService: PetService, private corService: CorService, private racaService: RacaService){}
+  constructor(private route: ActivatedRoute, private petService: PetService, private corService: CorService, private racaService: RacaService, private router: Router){}
 
   ngOnInit() {
     this.initializeData();
@@ -29,7 +30,6 @@ export class DetailsPetComponent implements OnInit {
   
   initializeData(){
     this.petId = this.route.snapshot.paramMap.get('id');
-    console.log(this.petId)
     this.route.params.subscribe(params => {
       this.petId = +params['id'];
       this.loadPetDetails(this.petId);
@@ -39,12 +39,11 @@ export class DetailsPetComponent implements OnInit {
   async loadPetDetails(id: number) {
     await this.petService.getPetById(id).subscribe(pet => {
       this.pet = pet;
-      console.log(pet)
     });
+  }
 
-    
-
-    
+  goEdit(){
+    this.router.navigate(['/pet/register', this.petId]);
   }
 
 }

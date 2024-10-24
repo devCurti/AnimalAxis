@@ -1,19 +1,19 @@
-<p-menubar [model]="items">
+<p-menubar [model]="items" class="bg-gray-900 text-white">
     <ng-template pTemplate="item" let-item>
         <ng-container *ngIf="item.route; else urlRef">
-            <a [routerLink]="item.route" class="p-menuitem-link">
+            <a [routerLink]="item.route" class="p-menuitem-link flex align-items-center p-2">
                 <span [class]="item.icon"></span>
                 <span class="ml-2">{{ item.label }}</span>
             </a>
         </ng-container>
         <ng-template #urlRef>
-            <a *ngIf="item.url; else noLink" [href]="item.url" class="p-menuitem-link">
+            <a *ngIf="item.url; else noLink" [href]="item.url" class="p-menuitem-link flex align-items-center p-2">
                 <span [class]="item.icon"></span>
                 <span class="ml-2">{{ item.label }}</span>
             </a>
         </ng-template>
         <ng-template #noLink>
-            <div class="p-menuitem-link">
+            <div class="p-menuitem-link flex align-items-center p-2">
                 <span [class]="item.icon"></span>
                 <span class="ml-2">{{ item.label }}</span>
                 <span class="pi pi-fw pi-angle-down ml-2"></span>
@@ -21,39 +21,57 @@
         </ng-template>
     </ng-template>
     <div class="p-menuitem-link mr-5 flex align-items-center">
-        <span class="ml-2">{{user.email}}</span>
-        <span class="ml-2 cursor-pointer" (click)="logout()">Sair</span>
+        <span class="ml-2">{{ user.email }}</span>
+        <span class="ml-2 cursor-pointer text-red-400" (click)="logout()">Sair</span>
     </div>
 </p-menubar>
 
 <div class="brancoAnimal p-4">
     <div class="m-0 md:m-6 text-center">
-        <h1 class="text-2xl font-bold mb-6">Bem-vindo ao Animal Axis</h1>
+        <h1 class="text-3xl font-bold mb-6 text-gray-800">Bem-vindo ao Animal Axis</h1>
         <div class="grid justify-content-center m-3 gap-3">
-            <a routerLink="/pet/search" class="col-12 sm:col-6 md:col-4 lg:col-3 cardPet bg-primary border-round-2xl mb-4 transition-transform hover:scale-105 shadow-2 h-40 flex align-items-center justify-content-center no-underline">
+            <a routerLink="/pet/search"
+               class="col-12 sm:col-6 md:col-4 lg:col-3 cardPet bg-teal-600 border-round-2xl mb-4 transition-transform hover:scale-105 shadow-2 h-40 flex align-items-center justify-content-center no-underline">
                 <div class="m-3 flex flex-column align-items-center text-white">
-                    <i class="pi pi-home text-center" style="font-size: 2rem"></i>
+                    <i class="pi pi-heart text-center" style="font-size: 2rem"></i>
                     <h2 class="text-lg font-semibold">Meus Pets</h2>
                 </div>
             </a>
-            <a routerLink="/pet/register" class="col-12 sm:col-6 md:col-4 lg:col-3 cardPet bg-indigo-500 border-round-2xl mb-4 transition-transform hover:scale-105 shadow-2 h-40 flex align-items-center justify-content-center no-underline">
+            <a routerLink="/pet/register"
+               class="col-12 sm:col-6 md:col-4 lg:col-3 cardPet bg-blue-500 border-round-2xl mb-4 transition-transform hover:scale-105 shadow-2 h-40 flex align-items-center justify-content-center no-underline">
                 <div class="m-3 flex flex-column align-items-center text-white">
-                    <i class="pi pi-plus" style="font-size: 2rem"></i>
+                    <i class="pi pi-pencil" style="font-size: 2rem"></i>
                     <h2 class="text-lg font-semibold">Registro Pet</h2>
                 </div>
             </a>
-            <div class="col-12 sm:col-6 md:col-4 lg:col-3 cardPet bg-purple-500 border-round-2xl mb-4 transition-transform hover:scale-105 shadow-2 h-40 flex align-items-center justify-content-center no-underline">
+            <a routerLink="/nascimento/register"
+               class="col-12 sm:col-6 md:col-4 lg:col-3 cardPet bg-indigo-600 border-round-2xl mb-4 transition-transform hover:scale-105 shadow-2 h-40 flex align-items-center justify-content-center no-underline">
                 <div class="m-3 flex flex-column align-items-center text-white">
                     <i class="pi pi-heart text-center" style="font-size: 2rem"></i>
-                    <h2 class="text-lg font-semibold">Favoritos</h2>
+                    <h2 class="text-lg font-semibold">Registro Nascimento</h2>
                 </div>
-            </div>
-            <div class="col-12 sm:col-6 md:col-4 lg:col-3 cardPet bg-orange-500 border-round-2xl mb-4 transition-transform hover:scale-105 shadow-2 h-40 flex align-items-center justify-content-center no-underline">
+            </a>
+            <a routerLink="/nascimento/search"
+               class="col-12 sm:col-6 md:col-4 lg:col-3 cardPet bg-orange-500 border-round-2xl mb-4 transition-transform hover:scale-105 shadow-2 h-40 flex align-items-center justify-content-center no-underline">
                 <div class="m-3 flex flex-column align-items-center text-white">
                     <i class="pi pi-calendar text-center" style="font-size: 2rem"></i>
-                    <h2 class="text-lg font-semibold">Histórico</h2>
+                    <h2 class="text-lg font-semibold">Nascimentos</h2>
                 </div>
-            </div>
+            </a>
+            <a routerLink="/registro-sanitario"
+               class="col-12 sm:col-6 md:col-4 lg:col-3 cardPet bg-purple-500 border-round-2xl mb-4 transition-transform hover:scale-105 shadow-2 h-40 flex align-items-center justify-content-center no-underline">
+                <div class="m-3 flex flex-column align-items-center text-white">
+                    <i class="pi pi-file text-center" style="font-size: 2rem"></i>
+                    <h2 class="text-lg font-semibold">Registro Sanitário</h2>
+                </div>
+            </a>
+            <a routerLink="/controle-sanitario"
+               class="col-12 sm:col-6 md:col-4 lg:col-3 cardPet bg-green-600 border-round-2xl mb-4 transition-transform hover:scale-105 shadow-2 h-40 flex align-items-center justify-content-center no-underline">
+                <div class="m-3 flex flex-column align-items-center text-white">
+                    <i class="pi pi-check-circle text-center" style="font-size: 2rem"></i>
+                    <h2 class="text-lg font-semibold">Controle Sanitário</h2>
+                </div>
+            </a>
         </div>
     </div>
 </div>

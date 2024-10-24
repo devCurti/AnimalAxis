@@ -42,6 +42,16 @@
     ]
   },
   {
+    "ContainingType": "AnimalAxis.Controllers.AuthController",
+    "Method": "VerifyAuth",
+    "RelativePath": "api/Auth/verifyAuth",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "AnimalAxis.Controllers.CorController",
     "Method": "GetCor",
     "RelativePath": "api/Cor",
@@ -51,7 +61,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[AnimalAxis.Models.Cor, AnimalAxis, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[AnimalAxis.DTO.CorDto, AnimalAxis, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -138,6 +148,115 @@
     "ContainingType": "AnimalAxis.Controllers.CorController",
     "Method": "DeleteCor",
     "RelativePath": "api/Cor/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AnimalAxis.Controllers.NascimentosController",
+    "Method": "GetNascimento",
+    "RelativePath": "api/Nascimentos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[AnimalAxis.DTO.NascimentoDto, AnimalAxis, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AnimalAxis.Controllers.NascimentosController",
+    "Method": "PostNascimento",
+    "RelativePath": "api/Nascimentos",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nascimento",
+        "Type": "AnimalAxis.Models.Nascimento",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "AnimalAxis.Models.Nascimento",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AnimalAxis.Controllers.NascimentosController",
+    "Method": "GetNascimento",
+    "RelativePath": "api/Nascimentos/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "AnimalAxis.DTO.NascimentoDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AnimalAxis.Controllers.NascimentosController",
+    "Method": "PutNascimento",
+    "RelativePath": "api/Nascimentos/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "nascimento",
+        "Type": "AnimalAxis.Models.Nascimento",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AnimalAxis.Controllers.NascimentosController",
+    "Method": "DeleteNascimento",
+    "RelativePath": "api/Nascimentos/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -309,7 +428,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[AnimalAxis.Models.Raca, AnimalAxis, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[AnimalAxis.DTO.RacaDto, AnimalAxis, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

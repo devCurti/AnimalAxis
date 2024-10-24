@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AnimalAxis")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+436cf390ac3e1b53b3a097bbe289329a4cfcadd4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+39933db8f80058d2b1448444848b86632a502045")]
 [assembly: System.Reflection.AssemblyProductAttribute("AnimalAxis")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AnimalAxis")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

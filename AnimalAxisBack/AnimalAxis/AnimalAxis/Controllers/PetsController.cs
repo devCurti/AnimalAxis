@@ -32,13 +32,6 @@ namespace AnimalAxis.Controllers
         public async Task<ActionResult<IEnumerable<Pet>>> GetPet()
         {
             var currentUser = _userContext.GetCurrentUserId();
-            /*var pets = await _context.Pet
-                .Where(p => p.UsuarioId == currentUser)
-                .Include(p => p.Raca).ThenInclude(p => p.Nome)
-                .Include(p => p.Cor)
-                .Include(p => p.Pai)
-                .Include(p => p.Mae)
-                .ToListAsync();*/
             var pets = await _context.Pet
                 .Where(p => p.UsuarioId == currentUser)
                 .Include(p => p.Raca)
@@ -87,9 +80,15 @@ namespace AnimalAxis.Controllers
             var currentUser = _userContext.GetCurrentUserId();
             var pets = await _context.Pet
                 .Where(p => p.UsuarioId == currentUser && p.Sexo == 'M')
+                .Include(p => p.Raca)
+                .Select(p => new PetDto
+                {
+                    Id = p.Id,
+                    Nome = p.Nome,
+                    Sexo = p.Sexo
+
+                })
                 .ToListAsync();
-
-
 
             return Ok(pets);
         }
@@ -101,9 +100,15 @@ namespace AnimalAxis.Controllers
             var currentUser = _userContext.GetCurrentUserId();
             var pets = await _context.Pet
                 .Where(p => p.UsuarioId == currentUser && p.Sexo == 'F')
+                .Include(p => p.Raca)
+                .Select(p => new PetDto
+                {
+                    Id = p.Id,
+                    Nome = p.Nome,
+                    Sexo = p.Sexo
+
+                })
                 .ToListAsync();
-
-
 
             return Ok(pets);
         }
@@ -137,21 +142,21 @@ namespace AnimalAxis.Controllers
                     {
                         Id = p.Pai.Id,
                         Nome = p.Pai.Nome,
-                        Sexo = p.Pai.Sexo // Corrigido para usar p.Pai.Sexo
+                        Sexo = p.Pai.Sexo
                     } : null,
                     Mae = p.Mae != null ? new PetDto
                     {
                         Id = p.Mae.Id,
                         Nome = p.Mae.Nome,
-                        Sexo = p.Mae.Sexo // Corrigido para usar p.Mae.Sexo
+                        Sexo = p.Mae.Sexo
                     } : null,
                     Cor = p.Cor != null ? new CorDto
                     {
                         Id = p.Cor.Id,
-                        Nome = p.Cor.Nome // Corrigido para usar p.Cor.Nome
+                        Nome = p.Cor.Nome
                     } : null
                 })
-                .FirstOrDefaultAsync(); // Altera para FirstOrDefaultAsync para obter um único resultado
+                .FirstOrDefaultAsync();
 
             if (pet == null)
             {
@@ -166,12 +171,10 @@ namespace AnimalAxis.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPet(int id, Pet pet)
         {
-            if (id != pet.Id)
-            {
-                return BadRequest();
-            }
-
             _context.Entry(pet).State = EntityState.Modified;
+
+            var currentUser = _userContext.GetCurrentUserId();
+            pet.UsuarioId = currentUser;
 
             try
             {

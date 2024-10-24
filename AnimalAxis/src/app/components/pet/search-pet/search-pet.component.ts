@@ -29,12 +29,15 @@ export class SearchPetComponent implements OnInit{
   initializeData(){
     this.petService.getPets().subscribe(pets => {
       this.pets = pets;
-      console.log(this.pets);
     })
   }
 
   viewDetails(pet: any){
     this.router.navigate(['/pet/details', pet.id]);
+  }
+
+  addPet(){
+    this.router.navigate(['/pet/register']);
   }
 
 }

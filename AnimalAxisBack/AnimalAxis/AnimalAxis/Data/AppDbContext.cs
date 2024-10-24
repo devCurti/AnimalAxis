@@ -42,11 +42,25 @@ namespace AnimalAxis.Data
             .WithMany(c => c.Pets)
             .HasForeignKey(p => p.RacaId)
             .OnDelete(DeleteBehavior.Cascade);
+
+
+            modelBuilder.Entity<Nascimento>()
+            .HasOne(n => n.Mae)
+            .WithMany(p => p.Nascimento)
+            .HasForeignKey(n => n.MaeId)
+            .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Nascimento>()
+            .HasOne(n => n.Pai)
+            .WithMany()
+            .HasForeignKey(n => n.PaiId)
+            .OnDelete(DeleteBehavior.Restrict);
         }
 
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<AnimalAxis.Models.Pet> Pet { get; set; } = default!;
         public DbSet<AnimalAxis.Models.Raca> Raca { get; set; } = default!;
         public DbSet<AnimalAxis.Models.Cor> Cor { get; set; } = default!;
+        public DbSet<AnimalAxis.Models.Nascimento> Nascimento { get; set; } = default!;
     }
 }

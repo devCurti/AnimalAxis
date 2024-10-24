@@ -42,8 +42,7 @@ export class LoginComponent implements OnInit {
 
         this.auth.login(email, senha).subscribe({
           next: response => {
-            this.messageService.add({ severity: 'success', summary: 'Sucesso', detail: 'Login validado com sucesso!' });
-            this.messageService.add({ severity: 'success', summary: 'Sucesso', detail: 'Seja bem-vindo!' });
+            this.messageService.add({ severity: 'success', summary: 'Seja bem-vindo!', detail: 'Login validado com sucesso!' });
             setTimeout(() => {
               this.router.navigate(['/home']);
           }, 2000);

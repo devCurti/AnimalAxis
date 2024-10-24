@@ -1,5 +1,6 @@
 ﻿using AnimalAxis.Data;
 using AnimalAxis.Models;
+using AnimalAxis.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -14,10 +15,12 @@ namespace AnimalAxis.Controllers
     public class AuthController : ControllerBase
     {
         private readonly AppDbContext _context;
+        private readonly Interfaces.IUserContext _userContext;
 
-        public AuthController(AppDbContext context)
+        public AuthController(AppDbContext context, Interfaces.IUserContext userContext)
         {
             _context = context;
+            _userContext = userContext;
         }
 
         // POST: api/auth/register
@@ -44,6 +47,11 @@ namespace AnimalAxis.Controllers
         [HttpPost("login")]
         public async Task<ActionResult<object>> Login(Usuario usuario)
         {
+            if (usuario == null || string.IsNullOrEmpty(usuario.email) || string.IsNullOrEmpty(usuario.password))
+            {
+                return BadRequest("Credenciais inválidas.");
+            }
+
             var existingUser = await _context.Usuarios.SingleOrDefaultAsync(u => u.email == usuario.email);
 
             if (existingUser == null || !BCrypt.Net.BCrypt.Verify(usuario.password, existingUser.password))
@@ -73,6 +81,20 @@ namespace AnimalAxis.Controllers
                 UserId = existingUser.id,
                 Email = existingUser.email
             });
+        }
+
+
+        [HttpGet("verifyAuth")]
+        public IActionResult VerifyAuth()
+        {
+            var userId = _userContext.GetCurrentUserId();
+
+            if (userId == -1)
+            {
+                throw new UnauthorizedAccessException("Não autorizado.");
+            }
+
+            return Ok(true);
         }
 
     }

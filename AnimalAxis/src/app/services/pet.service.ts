@@ -35,8 +35,11 @@ export class PetService {
   }
 
   addPet(pet: Pet): Observable<Pet> {
-    console.log(pet)
     return this.http.post<Pet>(this.apiUrl, pet, { headers: this.getHeaders() });
+  }
+
+  editPet(id:number, pet: Pet): Observable<Pet> {
+    return this.http.put<Pet>(`${this.apiUrl}/${id}`, pet, { headers: this.getHeaders() });
   }
 
   getPetById(petId: number): Observable<Pet> {
