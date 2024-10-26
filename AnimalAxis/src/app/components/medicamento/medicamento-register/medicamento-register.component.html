@@ -1,0 +1,66 @@
+<div class="container azulAnimal p-5 flex flex-column align-items-center justify-content-center">
+    <p-toast></p-toast>
+    <div class="brancoAnimal text-center w-full md:w-10 p-6 md:p-8 border-round shadow-4 bg-white transition-shadow">
+        <h1 class="text-4xl font-bold mb-6 text-indigo-600 pb-5" *ngIf="!medicamentoId">Registro de Medicamento</h1>
+        <h1 class="text-4xl font-bold mb-6 text-indigo-600" *ngIf="medicamentoId">Edição de Medicamento</h1>
+        <form [formGroup]="medicamentoForm" class="gap-4">
+            <div class="grid grid-nogutter">
+                <div class="col-12 md:col-6 mb-4">
+                    <div class="mb-4">
+                        <label for="pai" class="text-left font-semibold text-lg mb-2 text-gray-700">Pet</label>
+                    </div>
+                    <p-dropdown [options]="pets" formControlName="pet" optionLabel="nome" [filter]="true"
+                        filterBy="nome" [showClear]="true" placeholder="Selecione o pet" id="pet"
+                        class="w-full p-inputtext-sm" optionValue="id">
+                    </p-dropdown>
+                </div>
+                <!--<div class="col-12 md:col-6 mb-4">
+                    <div class="mb-4">
+                        <label for="tipoMedicamento" class="text-left font-semibold text-lg mb-2 text-gray-700">Tipo Medicamento</label>
+                    </div>
+                    <p-dropdown [options]="tipoMedicamentos" formControlName="tipoMedicamento" optionLabel="nome"
+                        [filter]="true" filterBy="nome" [showClear]="true" placeholder="Tipo do Medicamento" id="mae"
+                        optionValue="id" class="w-full p-inputtext-sm">
+                    </p-dropdown>
+                </div>-->
+                <div class="col-12 md:col-6 mb-4">
+                    <div class="mb-4">
+                        <label for="dataDeAplicacao" class="text-left font-semibold text-lg mb-2 text-gray-700">Data de Aplicação</label>
+                    </div>
+                    <p-calendar formControlName="dataDaAplicacao" [showIcon]="true" dateFormat="dd/mm/yy"
+                        id="dataDeAplicacao" class="w-full"></p-calendar>
+                </div>
+                <div class="col-12 md:col-6 mb-4">
+                    <div class="mb-4">
+                        <label for="medicamento" class="text-left font-semibold text-lg mb-2 text-gray-700">Medicamento</label>
+                    </div>
+                    <p-dropdown [options]="medicamentos" formControlName="medicamento" optionLabel="nome"
+                        [filter]="true" filterBy="nome" [showClear]="true" placeholder="Selecione o medicamento"
+                        id="medicamento" optionValue="id" class="w-full p-inputtext-sm">
+                    </p-dropdown>
+                </div>
+                <div class="col-12 md:col-6 mb-4">
+                    <div class="mb-4">
+                        <label class="text-left font-semibold text-lg mb-2 text-gray-700">Dose</label>
+                    </div>
+                    <div>
+                        <div *ngFor="let dose of doses" class="mb-2">
+                            <p-radioButton [inputId]="dose.id" name="dose" [value]="dose" formControlName="dose" />
+                            <label [for]="dose.id">
+                                {{ dose.nome }}
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-content-center mt-5">
+                <button (click)="cadastrarRegistroMedicamento()"
+                    class="p-button p-component font-bold text-white bg-indigo-600 hover:bg-indigo-800 transition-colors duration-200 border-none w-full py-3 text-base md:text-lg">
+                    <span class="p-button-label" *ngIf="!medicamentoId">Cadastrar Medicamento</span>
+                    <span class="p-button-label" *ngIf="medicamentoId">Editar Medicamento</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

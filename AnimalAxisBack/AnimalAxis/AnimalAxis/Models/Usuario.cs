@@ -11,6 +11,8 @@ namespace AnimalAxis.Models
         public string? phone { get; set; }
         public string? name { get; set; }
         public virtual List<Pet> Pets { get; set; } = new();
+        public virtual List<RegistroMedicamento> RegistroMedicamentos { get; set; } = new();
+        public virtual List<RegistroReprodutivo> RegistroReprodutivos { get; set; } = new();
 
     }
 }

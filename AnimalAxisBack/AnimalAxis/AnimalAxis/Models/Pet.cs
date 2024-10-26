@@ -34,5 +34,7 @@ namespace AnimalAxis.Models
         public required int UsuarioId { get; set; }
         public virtual Usuario? Usuario { get; set; }
         public virtual IList<Nascimento>? Nascimento { get; set; }
+
+        public virtual IList<RegistroMedicamento>? RegistroMedicamento { get; set; }
     }
 }

@@ -11,6 +11,7 @@ C:\Users\Ruivo\Documents\Projects\AnimalAxis\AnimalAxis\AnimalAxisBack\AnimalAxi
 C:\Users\Ruivo\Documents\Projects\AnimalAxis\AnimalAxis\AnimalAxisBack\AnimalAxis\AnimalAxis\obj\Release\net8.0\PubTmp\Out\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\Ruivo\Documents\Projects\AnimalAxis\AnimalAxis\AnimalAxisBack\AnimalAxis\AnimalAxis\obj\Release\net8.0\PubTmp\Out\Microsoft.AspNetCore.Razor.Language.dll
 C:\Users\Ruivo\Documents\Projects\AnimalAxis\AnimalAxis\AnimalAxisBack\AnimalAxis\AnimalAxis\obj\Release\net8.0\PubTmp\Out\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Ruivo\Documents\Projects\AnimalAxis\AnimalAxis\AnimalAxisBack\AnimalAxis\AnimalAxis\obj\Release\net8.0\PubTmp\Out\Microsoft.Bcl.TimeProvider.dll
 C:\Users\Ruivo\Documents\Projects\AnimalAxis\AnimalAxis\AnimalAxisBack\AnimalAxis\AnimalAxis\obj\Release\net8.0\PubTmp\Out\Microsoft.Build.dll
 C:\Users\Ruivo\Documents\Projects\AnimalAxis\AnimalAxis\AnimalAxisBack\AnimalAxis\AnimalAxis\obj\Release\net8.0\PubTmp\Out\Microsoft.Build.Framework.dll
 C:\Users\Ruivo\Documents\Projects\AnimalAxis\AnimalAxis\AnimalAxisBack\AnimalAxis\AnimalAxis\obj\Release\net8.0\PubTmp\Out\Microsoft.CodeAnalysis.AnalyzerUtilities.dll
@@ -30,7 +31,13 @@ C:\Users\Ruivo\Documents\Projects\AnimalAxis\AnimalAxis\AnimalAxisBack\AnimalAxi
 C:\Users\Ruivo\Documents\Projects\AnimalAxis\AnimalAxis\AnimalAxisBack\AnimalAxis\AnimalAxis\obj\Release\net8.0\PubTmp\Out\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\Users\Ruivo\Documents\Projects\AnimalAxis\AnimalAxis\AnimalAxisBack\AnimalAxis\AnimalAxis\obj\Release\net8.0\PubTmp\Out\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\Ruivo\Documents\Projects\AnimalAxis\AnimalAxis\AnimalAxisBack\AnimalAxis\AnimalAxis\obj\Release\net8.0\PubTmp\Out\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\Ruivo\Documents\Projects\AnimalAxis\AnimalAxis\AnimalAxisBack\AnimalAxis\AnimalAxis\obj\Release\net8.0\PubTmp\Out\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Ruivo\Documents\Projects\AnimalAxis\AnimalAxis\AnimalAxisBack\AnimalAxis\AnimalAxis\obj\Release\net8.0\PubTmp\Out\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Ruivo\Documents\Projects\AnimalAxis\AnimalAxis\AnimalAxisBack\AnimalAxis\AnimalAxis\obj\Release\net8.0\PubTmp\Out\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Users\Ruivo\Documents\Projects\AnimalAxis\AnimalAxis\AnimalAxisBack\AnimalAxis\AnimalAxis\obj\Release\net8.0\PubTmp\Out\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Ruivo\Documents\Projects\AnimalAxis\AnimalAxis\AnimalAxisBack\AnimalAxis\AnimalAxis\obj\Release\net8.0\PubTmp\Out\Microsoft.Extensions.Logging.dll
+C:\Users\Ruivo\Documents\Projects\AnimalAxis\AnimalAxis\AnimalAxisBack\AnimalAxis\AnimalAxis\obj\Release\net8.0\PubTmp\Out\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Ruivo\Documents\Projects\AnimalAxis\AnimalAxis\AnimalAxisBack\AnimalAxis\AnimalAxis\obj\Release\net8.0\PubTmp\Out\Microsoft.Extensions.Options.dll
 C:\Users\Ruivo\Documents\Projects\AnimalAxis\AnimalAxis\AnimalAxisBack\AnimalAxis\AnimalAxis\obj\Release\net8.0\PubTmp\Out\Microsoft.Identity.Client.dll
 C:\Users\Ruivo\Documents\Projects\AnimalAxis\AnimalAxis\AnimalAxisBack\AnimalAxis\AnimalAxis\obj\Release\net8.0\PubTmp\Out\Microsoft.Identity.Client.Extensions.Msal.dll
 C:\Users\Ruivo\Documents\Projects\AnimalAxis\AnimalAxis\AnimalAxisBack\AnimalAxis\AnimalAxis\obj\Release\net8.0\PubTmp\Out\Microsoft.IdentityModel.Abstractions.dll

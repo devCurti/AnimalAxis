@@ -1,6 +1,5 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { InputTextModule } from 'primeng/inputtext';
-import { NgModel } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
@@ -10,8 +9,6 @@ import { NgIf } from '@angular/common';
 import { NgClass } from '@angular/common';
 import { FormsModule, Validators } from '@angular/forms';
 import { DropdownModule } from 'primeng/dropdown';
-import { Raca } from '../../../models/raca';
-import { RacaService } from '../../../services/raca.service';
 import { CalendarModule } from 'primeng/calendar';
 import { Pet } from '../../../models/pet';
 import { PetService } from '../../../services/pet.service';
@@ -22,7 +19,6 @@ import { DatePipe } from '@angular/common';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { InputTextareaModule } from 'primeng/inputtextarea';
-import { InputTextarea } from 'primeng/inputtextarea';
 import { Nascimento } from '../../../models/nascimento';
 import { NascimentoService } from '../../../services/nascimento.service';
 
@@ -35,7 +31,7 @@ import { NascimentoService } from '../../../services/nascimento.service';
   styleUrl: './register-nascimento.component.css',
   providers: [MessageService, DatePipe]
 })
-export class RegisterNascimentoComponent {
+export class RegisterNascimentoComponent implements OnInit {
 
   nascimentoForm: any;
 

@@ -1,0 +1,47 @@
+<div class="container azulAnimal p-5 flex flex-column align-items-center justify-content-center">
+    <p-toast></p-toast>
+    <p-confirmDialog></p-confirmDialog>
+    <div class="brancoAnimal text-center w-full md:w-10 p-6 md:p-8 border-round shadow-4 bg-white transition-shadow">
+        <div class="p-2 mb-5">
+            <h1 class="text-4xl font-bold text-pink-600 tracking-wide">Controle Reprodutivo</h1>
+        </div>
+
+        <div class="flex justify-content-end mb-4">
+            <button pButton label="Adicionar Reprodução" icon="pi pi-plus" 
+                    class="p-button-rounded p-button-success p-button-md transition-transform hover:scale-120"
+                    (click)="addRegistroReprodutivo()"></button>
+        </div>
+
+
+        <p-table [value]="registroReprodutivos" [paginator]="true" [rows]="5"
+                 [tableStyle]="{ 'min-width': '60rem' }"
+                 [rowsPerPageOptions]="[5, 10, 20]"
+                 class="border-round shadow-2">
+            <ng-template pTemplate="header">
+                <tr class="bg-teal-100 text-teal-700">
+                    <th style="width:20%" class="text-left">Fêmea</th>
+                    <th style="width:25%" class="text-left">Data do Cio</th>
+                    <th style="width:25%" class="text-left">Periodo de Cruza</th>
+                    <th style="width:20%" class="text-left">Macho</th>
+                    <th style="width:10%">Ações</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-reproducao>
+                <tr class="hover:bg-teal-50 transition-colors">
+                    <td>{{ reproducao.femeaNome }}</td>
+                    <td>{{ reproducao.dataCio | date: 'dd/MM/yyyy' }}</td>
+                    <td>{{ reproducao.periodoCruza | date: 'dd/MM/yyyy' }}</td>
+                    <td>{{ reproducao.machoNome }}</td>
+                    <td>
+                        <div class="flex align-items-center justify-content-center">
+                            <button (click)="editRegistroReprodutivo(reproducao)" pButton icon="pi pi-pencil" 
+                                    class="p-button-rounded p-button-info mr-2 transition-transform hover:scale-110" title="Editar"></button>
+                            <button (click)="deleteRegistroReprodutivo($event, reproducao)" pButton icon="pi pi-trash" 
+                                    class="p-button-rounded p-button-danger transition-transform hover:scale-110" title="Deletar"></button>
+                        </div>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</div>

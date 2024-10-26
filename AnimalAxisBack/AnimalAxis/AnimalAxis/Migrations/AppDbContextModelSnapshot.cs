@@ -39,6 +39,28 @@ namespace AnimalAxis.Migrations
                     b.ToTable("Cor");
                 });
 
+            modelBuilder.Entity("AnimalAxis.Models.Medicamento", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("TipoMedicamentoId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TipoMedicamentoId");
+
+                    b.ToTable("Medicamento");
+                });
+
             modelBuilder.Entity("AnimalAxis.Models.Nascimento", b =>
                 {
                     b.Property<int>("Id")
@@ -151,6 +173,91 @@ namespace AnimalAxis.Migrations
                     b.ToTable("Raca");
                 });
 
+            modelBuilder.Entity("AnimalAxis.Models.RegistroMedicamento", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("DataAplicacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("Dose")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MedicamentoId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PetId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MedicamentoId");
+
+                    b.HasIndex("PetId");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("RegistroMedicamento");
+                });
+
+            modelBuilder.Entity("AnimalAxis.Models.RegistroReprodutivo", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("DataDoCio")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("FemeaId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MachoId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("PeriodoDeCruz")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FemeaId");
+
+                    b.HasIndex("MachoId");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("RegistroReprodutivo");
+                });
+
+            modelBuilder.Entity("AnimalAxis.Models.TipoMedicamento", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TipoMedicamento");
+                });
+
             modelBuilder.Entity("AnimalAxis.Models.Usuario", b =>
                 {
                     b.Property<int>("id")
@@ -174,6 +281,15 @@ namespace AnimalAxis.Migrations
                     b.HasKey("id");
 
                     b.ToTable("Usuarios");
+                });
+
+            modelBuilder.Entity("AnimalAxis.Models.Medicamento", b =>
+                {
+                    b.HasOne("AnimalAxis.Models.TipoMedicamento", "TipoMedicamento")
+                        .WithMany("Medicamentos")
+                        .HasForeignKey("TipoMedicamentoId");
+
+                    b.Navigation("TipoMedicamento");
                 });
 
             modelBuilder.Entity("AnimalAxis.Models.Nascimento", b =>
@@ -242,14 +358,73 @@ namespace AnimalAxis.Migrations
                     b.Navigation("Usuario");
                 });
 
+            modelBuilder.Entity("AnimalAxis.Models.RegistroMedicamento", b =>
+                {
+                    b.HasOne("AnimalAxis.Models.Medicamento", "Medicamento")
+                        .WithMany("RegistroMedicamentoList")
+                        .HasForeignKey("MedicamentoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("AnimalAxis.Models.Pet", "Pet")
+                        .WithMany("RegistroMedicamento")
+                        .HasForeignKey("PetId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("AnimalAxis.Models.Usuario", null)
+                        .WithMany("RegistroMedicamentos")
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Medicamento");
+
+                    b.Navigation("Pet");
+                });
+
+            modelBuilder.Entity("AnimalAxis.Models.RegistroReprodutivo", b =>
+                {
+                    b.HasOne("AnimalAxis.Models.Pet", "Femea")
+                        .WithMany()
+                        .HasForeignKey("FemeaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("AnimalAxis.Models.Pet", "Macho")
+                        .WithMany()
+                        .HasForeignKey("MachoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("AnimalAxis.Models.Usuario", "Usuario")
+                        .WithMany("RegistroReprodutivos")
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Femea");
+
+                    b.Navigation("Macho");
+
+                    b.Navigation("Usuario");
+                });
+
             modelBuilder.Entity("AnimalAxis.Models.Cor", b =>
                 {
                     b.Navigation("Pets");
                 });
 
+            modelBuilder.Entity("AnimalAxis.Models.Medicamento", b =>
+                {
+                    b.Navigation("RegistroMedicamentoList");
+                });
+
             modelBuilder.Entity("AnimalAxis.Models.Pet", b =>
                 {
                     b.Navigation("Nascimento");
+
+                    b.Navigation("RegistroMedicamento");
                 });
 
             modelBuilder.Entity("AnimalAxis.Models.Raca", b =>
@@ -257,9 +432,18 @@ namespace AnimalAxis.Migrations
                     b.Navigation("Pets");
                 });
 
+            modelBuilder.Entity("AnimalAxis.Models.TipoMedicamento", b =>
+                {
+                    b.Navigation("Medicamentos");
+                });
+
             modelBuilder.Entity("AnimalAxis.Models.Usuario", b =>
                 {
                     b.Navigation("Pets");
+
+                    b.Navigation("RegistroMedicamentos");
+
+                    b.Navigation("RegistroReprodutivos");
                 });
 #pragma warning restore 612, 618
         }

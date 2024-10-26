@@ -62,5 +62,9 @@ namespace AnimalAxis.Data
         public DbSet<AnimalAxis.Models.Raca> Raca { get; set; } = default!;
         public DbSet<AnimalAxis.Models.Cor> Cor { get; set; } = default!;
         public DbSet<AnimalAxis.Models.Nascimento> Nascimento { get; set; } = default!;
+        public DbSet<AnimalAxis.Models.RegistroMedicamento> RegistroMedicamento { get; set; } = default!;
+        public DbSet<AnimalAxis.Models.TipoMedicamento> TipoMedicamento { get; set; } = default!;
+        public DbSet<AnimalAxis.Models.Medicamento> Medicamento { get; set; } = default!;
+        public DbSet<AnimalAxis.Models.RegistroReprodutivo> RegistroReprodutivo { get; set; } = default!;
     }
 }

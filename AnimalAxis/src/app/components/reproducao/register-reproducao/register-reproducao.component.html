@@ -1,0 +1,51 @@
+<div class="container azulAnimal p-5 flex flex-column align-items-center justify-content-center">
+    <p-toast></p-toast>
+    <div class="brancoAnimal text-center w-full md:w-10 p-6 md:p-8 border-round shadow-4 bg-white transition-shadow">
+        <h1 class="text-4xl font-bold mb-6 text-pink-600 pb-5" *ngIf="!registroReprodutivoId">Registro de Reprodução</h1>
+        <h1 class="text-4xl font-bold mb-6 text-pink-600" *ngIf="registroReprodutivoId">Edição de Reprodução</h1>
+        <form [formGroup]="registroReprodutivoForm" class="gap-4">
+            <div class="grid grid-nogutter">
+                <div class="col-12 md:col-6 mb-4">
+                    <div class="mb-4">
+                        <label for="pai" class="text-left font-semibold text-lg mb-2 text-gray-700">Macho</label>
+                    </div>
+                    <p-dropdown [options]="machos" formControlName="macho" optionLabel="nome" [filter]="true"
+                        filterBy="nome" [showClear]="true" placeholder="Selecione o macho" id="pet"
+                        class="w-full p-inputtext-sm" optionValue="id">
+                    </p-dropdown>
+                </div>
+                <div class="col-12 md:col-6 mb-4">
+                    <div class="mb-4">
+                        <label for="dataCio" class="text-left font-semibold text-lg mb-2 text-gray-700">Data do Cio</label>
+                    </div>
+                    <p-calendar formControlName="dataCio" [showIcon]="true" dateFormat="dd/mm/yy"
+                        id="dataCio" class="w-full"></p-calendar>
+                </div>
+                <div class="col-12 md:col-6 mb-4">
+                    <div class="mb-4">
+                        <label for="pai" class="text-left font-semibold text-lg mb-2 text-gray-700">Femêa</label>
+                    </div>
+                    <p-dropdown [options]="femeas" formControlName="femea" optionLabel="nome" [filter]="true"
+                        filterBy="nome" [showClear]="true" placeholder="Selecione a femea" id="pet"
+                        class="w-full p-inputtext-sm" optionValue="id">
+                    </p-dropdown>
+                </div>
+                <div class="col-12 md:col-6 mb-4">
+                    <div class="mb-4">
+                        <label for="periodoCruza" class="text-left font-semibold text-lg mb-2 text-gray-700">Periodo de Cruza</label>
+                    </div>
+                    <p-calendar formControlName="periodoCruza" [showIcon]="true" dateFormat="dd/mm/yy"
+                        id="periodoCruza" class="w-full"></p-calendar>
+                </div>
+            </div>
+
+            <div class="flex justify-content-center mt-5">
+                <button (click)="cadastrarRegistroReprodutivo()"
+                    class="p-button p-component font-bold text-white bg-pink-600 hover:bg-pink-800 transition-colors duration-200 border-none w-full py-3 text-base md:text-lg">
+                    <span class="p-button-label" *ngIf="!registroReprodutivoId">Cadastrar Reprodução</span>
+                    <span class="p-button-label" *ngIf="registroReprodutivoId">Editar Reprodução</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

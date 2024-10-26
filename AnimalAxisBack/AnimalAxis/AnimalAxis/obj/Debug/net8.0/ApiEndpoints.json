@@ -161,6 +161,115 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "AnimalAxis.Controllers.MedicamentosController",
+    "Method": "GetMedicamento",
+    "RelativePath": "api/Medicamentos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[AnimalAxis.Models.Medicamento, AnimalAxis, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AnimalAxis.Controllers.MedicamentosController",
+    "Method": "PostMedicamento",
+    "RelativePath": "api/Medicamentos",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "medicamento",
+        "Type": "AnimalAxis.Models.Medicamento",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "AnimalAxis.Models.Medicamento",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AnimalAxis.Controllers.MedicamentosController",
+    "Method": "GetMedicamento",
+    "RelativePath": "api/Medicamentos/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "AnimalAxis.Models.Medicamento",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AnimalAxis.Controllers.MedicamentosController",
+    "Method": "PutMedicamento",
+    "RelativePath": "api/Medicamentos/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "medicamento",
+        "Type": "AnimalAxis.Models.Medicamento",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AnimalAxis.Controllers.MedicamentosController",
+    "Method": "DeleteMedicamento",
+    "RelativePath": "api/Medicamentos/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "AnimalAxis.Controllers.NascimentosController",
     "Method": "GetNascimento",
     "RelativePath": "api/Nascimentos",
@@ -515,6 +624,333 @@
     "ContainingType": "AnimalAxis.Controllers.RacasController",
     "Method": "DeleteRaca",
     "RelativePath": "api/Racas/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AnimalAxis.Controllers.RegistroMedicamentosController",
+    "Method": "GetRegistroMedicamento",
+    "RelativePath": "api/RegistroMedicamentos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[AnimalAxis.DTO.RegistroMedicamentoDto, AnimalAxis, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AnimalAxis.Controllers.RegistroMedicamentosController",
+    "Method": "PostRegistroMedicamento",
+    "RelativePath": "api/RegistroMedicamentos",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "registroMedicamento",
+        "Type": "AnimalAxis.Models.RegistroMedicamento",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "AnimalAxis.Models.RegistroMedicamento",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AnimalAxis.Controllers.RegistroMedicamentosController",
+    "Method": "GetRegistroMedicamento",
+    "RelativePath": "api/RegistroMedicamentos/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "AnimalAxis.Models.RegistroMedicamento",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AnimalAxis.Controllers.RegistroMedicamentosController",
+    "Method": "PutRegistroMedicamento",
+    "RelativePath": "api/RegistroMedicamentos/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "registroMedicamento",
+        "Type": "AnimalAxis.Models.RegistroMedicamento",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AnimalAxis.Controllers.RegistroMedicamentosController",
+    "Method": "DeleteRegistroMedicamento",
+    "RelativePath": "api/RegistroMedicamentos/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AnimalAxis.Controllers.RegistroReprodutivosController",
+    "Method": "GetRegistroReprodutivo",
+    "RelativePath": "api/RegistroReprodutivos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[AnimalAxis.DTO.RegistroReprodutivoDto, AnimalAxis, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AnimalAxis.Controllers.RegistroReprodutivosController",
+    "Method": "PostRegistroReprodutivo",
+    "RelativePath": "api/RegistroReprodutivos",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "registroReprodutivo",
+        "Type": "AnimalAxis.Models.RegistroReprodutivo",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "AnimalAxis.Models.RegistroReprodutivo",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AnimalAxis.Controllers.RegistroReprodutivosController",
+    "Method": "GetRegistroReprodutivo",
+    "RelativePath": "api/RegistroReprodutivos/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "AnimalAxis.Models.RegistroReprodutivo",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AnimalAxis.Controllers.RegistroReprodutivosController",
+    "Method": "PutRegistroReprodutivo",
+    "RelativePath": "api/RegistroReprodutivos/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "registroReprodutivo",
+        "Type": "AnimalAxis.Models.RegistroReprodutivo",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AnimalAxis.Controllers.RegistroReprodutivosController",
+    "Method": "DeleteRegistroReprodutivo",
+    "RelativePath": "api/RegistroReprodutivos/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AnimalAxis.Controllers.TipoMedicamentosController",
+    "Method": "GetTipoMedicamento",
+    "RelativePath": "api/TipoMedicamentos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[AnimalAxis.Models.TipoMedicamento, AnimalAxis, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AnimalAxis.Controllers.TipoMedicamentosController",
+    "Method": "PostTipoMedicamento",
+    "RelativePath": "api/TipoMedicamentos",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tipoMedicamento",
+        "Type": "AnimalAxis.Models.TipoMedicamento",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "AnimalAxis.Models.TipoMedicamento",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AnimalAxis.Controllers.TipoMedicamentosController",
+    "Method": "GetTipoMedicamento",
+    "RelativePath": "api/TipoMedicamentos/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "AnimalAxis.Models.TipoMedicamento",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AnimalAxis.Controllers.TipoMedicamentosController",
+    "Method": "PutTipoMedicamento",
+    "RelativePath": "api/TipoMedicamentos/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "tipoMedicamento",
+        "Type": "AnimalAxis.Models.TipoMedicamento",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AnimalAxis.Controllers.TipoMedicamentosController",
+    "Method": "DeleteTipoMedicamento",
+    "RelativePath": "api/TipoMedicamentos/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,

@@ -8,6 +8,10 @@ import { RegisterComponent } from './components/register/register.component';
 import { AuthGuard } from './auth.guard';
 import { RegisterNascimentoComponent } from './components/nascimento/register-nascimento/register-nascimento.component';
 import { SearchNascimentoComponent } from './components/nascimento/search-nascimento/search-nascimento.component';
+import { MedicamentoRegisterComponent } from './components/medicamento/medicamento-register/medicamento-register.component';
+import { MedicamentoSearchComponent } from './components/medicamento/medicamento-search/medicamento-search.component';
+import { RegisterReproducaoComponent } from './components/reproducao/register-reproducao/register-reproducao.component';
+import { SearchReproducaoComponent } from './components/reproducao/search-reproducao/search-reproducao.component';
 
 export const routes: Routes = [ {path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
     { path: 'login', component: LoginComponent},
@@ -21,6 +25,12 @@ export const routes: Routes = [ {path: 'home', component: HomeComponent, canActi
     { path: 'nascimento/register', component: RegisterNascimentoComponent, canActivate: [AuthGuard]},
     { path: 'nascimento/search', component: SearchNascimentoComponent, canActivate: [AuthGuard]},
     { path: 'nascimento/register/:id', component: RegisterNascimentoComponent, canActivate: [AuthGuard]},
+    { path: 'medicamento/register', component: MedicamentoRegisterComponent, canActivate: [AuthGuard]},
+    { path: 'medicamento/search', component: MedicamentoSearchComponent, canActivate: [AuthGuard]},
+    { path: 'medicamento/register/:id', component: MedicamentoRegisterComponent, canActivate: [AuthGuard]},
+    { path: 'reproducao/register', component: RegisterReproducaoComponent, canActivate: [AuthGuard]},
+    { path: 'reproducao/search', component: SearchReproducaoComponent, canActivate: [AuthGuard]},
+    { path: 'reproducao/register/:id', component: RegisterReproducaoComponent, canActivate: [AuthGuard]},
 
     
  ];
