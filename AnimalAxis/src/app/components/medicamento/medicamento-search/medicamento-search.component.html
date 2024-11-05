@@ -33,7 +33,7 @@
                     <td>{{ medicamento.dataNascimentoPet | date: 'dd/MM/yyyy' }}</td>
                     <td>{{ medicamento.dataAplicacao | date: 'dd/MM/yyyy' }}</td>
                     <td>{{ medicamento.tipoMedicamentoNome }}</td>
-                    <td>{{ medicamento.medicamentoNome }}</td>
+                    <td>{{ medicamento.dose ? medicamento.dose != 4 ? medicamento.dose + '°' : '' : 'Reforço' }} {{ medicamento.medicamentoNome }}</td>
                     <td>
                         <div class="flex align-items-center justify-content-center">
                             <button (click)="editRegistroMedicamento(medicamento)" pButton icon="pi pi-pencil" 

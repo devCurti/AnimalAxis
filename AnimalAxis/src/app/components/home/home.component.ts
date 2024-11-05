@@ -18,30 +18,7 @@ export class HomeComponent implements OnInit {
 
   userEmail: any = localStorage.getItem('user.email');
   user = JSON.parse(localStorage.getItem('user') || '{}');
-
-  pets = [
-    {
-      nome: 'Tommy',
-      raca: 'Shitzu',
-      idade: '8'
-    },
-    {
-      nome: 'Bella',
-      raca: 'Golden Retriever',
-      idade: '3'
-    },
-    {
-      nome: 'Max',
-      raca: 'Bulldog Francês',
-      idade: '5'
-    },
-    {
-      nome: 'Luna',
-      raca: 'Poodle',
-      idade: '2'
-    }
-  ];
-
+  
   items = [
     {
       label: 'Configurações',

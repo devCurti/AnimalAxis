@@ -509,6 +509,32 @@
   },
   {
     "ContainingType": "AnimalAxis.Controllers.PetsController",
+    "Method": "filterPets",
+    "RelativePath": "api/Pets/filter",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "filterObject",
+        "Type": "AnimalAxis.Filters.PetFilter",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[AnimalAxis.Models.Pet, AnimalAxis, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AnimalAxis.Controllers.PetsController",
     "Method": "GetPetMachos",
     "RelativePath": "api/Pets/machos",
     "HttpMethod": "GET",

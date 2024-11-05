@@ -1,6 +1,3 @@
-import { Raca } from "./raca"
-import { Cor } from "./cor"
-
 export interface Pet {
     Id?: number,
     Nome: string,

@@ -11,6 +11,7 @@ using AnimalAxis.Interfaces;
 using AnimalAxis.Services;
 using System.Security.Claims;
 using AnimalAxis.DTO;
+using AnimalAxis.Filters;
 
 namespace AnimalAxis.Controllers
 {
@@ -229,5 +230,45 @@ namespace AnimalAxis.Controllers
         {
             return _context.Pet.Any(e => e.Id == id);
         }
+
+        //Filter
+        [HttpPost("filter")]
+        public async Task<ActionResult<IEnumerable<Pet>>> filterPets(PetFilter filterObject)
+        {
+
+            var pets = filterObject.Pets;
+
+            if (pets == null || !pets.Any())
+            {
+                return NotFound("No pets found.");
+            }
+
+            var filteredPets = pets.AsQueryable();
+
+            if (!string.IsNullOrEmpty(filterObject?.Nome))
+            {
+                filteredPets = filteredPets.Where(p => p.Nome.Contains(filterObject.Nome, StringComparison.OrdinalIgnoreCase)
+                                                      || p.Nome.StartsWith(filterObject.Nome, StringComparison.OrdinalIgnoreCase));
+            }
+
+            if (filterObject?.Sexo.HasValue == true && (filterObject?.Sexo == 'M' || filterObject?.Sexo == 'F'))
+            {
+                filteredPets = filteredPets.Where(p => p.Sexo == filterObject.Sexo.Value);
+            }
+            else
+            {
+                filteredPets = filteredPets.Where(p => p.Sexo == 'M' || p.Sexo == 'F');
+            }
+
+            if (filterObject?.Raca != null)
+            {
+                filteredPets = filteredPets.Where(p => p.Raca.Id == filterObject.Raca.Id);
+            }
+
+
+            return Ok(filteredPets.ToList());
+        }
+
+
     }
 }

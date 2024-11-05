@@ -3,24 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CD6BADD1-563E-4033-92EE-233F302C2ED7}|AnimalAxis\\AnimalAxis.csproj|c:\\users\\ruivo\\documents\\projects\\animalaxis\\animalaxis\\animalaxisback\\animalaxis\\animalaxis\\controllers\\registroreprodutivoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CD6BADD1-563E-4033-92EE-233F302C2ED7}|AnimalAxis\\AnimalAxis.csproj|solutionrelative:animalaxis\\controllers\\registroreprodutivoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CD6BADD1-563E-4033-92EE-233F302C2ED7}|AnimalAxis\\AnimalAxis.csproj|c:\\users\\ruivo\\documents\\projects\\animalaxis\\animalaxis\\animalaxisback\\animalaxis\\animalaxis\\controllers\\petscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD6BADD1-563E-4033-92EE-233F302C2ED7}|AnimalAxis\\AnimalAxis.csproj|solutionrelative:animalaxis\\controllers\\petscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CD6BADD1-563E-4033-92EE-233F302C2ED7}|AnimalAxis\\AnimalAxis.csproj|c:\\users\\ruivo\\documents\\projects\\animalaxis\\animalaxis\\animalaxisback\\animalaxis\\animalaxis\\dto\\registroreprodutivodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CD6BADD1-563E-4033-92EE-233F302C2ED7}|AnimalAxis\\AnimalAxis.csproj|solutionrelative:animalaxis\\dto\\registroreprodutivodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CD6BADD1-563E-4033-92EE-233F302C2ED7}|AnimalAxis\\AnimalAxis.csproj|c:\\users\\ruivo\\documents\\projects\\animalaxis\\animalaxis\\animalaxisback\\animalaxis\\animalaxis\\filters\\petfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD6BADD1-563E-4033-92EE-233F302C2ED7}|AnimalAxis\\AnimalAxis.csproj|solutionrelative:animalaxis\\filters\\petfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CD6BADD1-563E-4033-92EE-233F302C2ED7}|AnimalAxis\\AnimalAxis.csproj|c:\\users\\ruivo\\documents\\projects\\animalaxis\\animalaxis\\animalaxisback\\animalaxis\\animalaxis\\controllers\\registromedicamentoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CD6BADD1-563E-4033-92EE-233F302C2ED7}|AnimalAxis\\AnimalAxis.csproj|solutionrelative:animalaxis\\controllers\\registromedicamentoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CD6BADD1-563E-4033-92EE-233F302C2ED7}|AnimalAxis\\AnimalAxis.csproj|c:\\users\\ruivo\\documents\\projects\\animalaxis\\animalaxis\\animalaxisback\\animalaxis\\animalaxis\\models\\pet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD6BADD1-563E-4033-92EE-233F302C2ED7}|AnimalAxis\\AnimalAxis.csproj|solutionrelative:animalaxis\\models\\pet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\Migrations\\20241026032717_AnimalAxis.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AnimalAxis\\Migrations\\20241026032717_AnimalAxis.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CD6BADD1-563E-4033-92EE-233F302C2ED7}|AnimalAxis\\AnimalAxis.csproj|c:\\users\\ruivo\\documents\\projects\\animalaxis\\animalaxis\\animalaxisback\\animalaxis\\animalaxis\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CD6BADD1-563E-4033-92EE-233F302C2ED7}|AnimalAxis\\AnimalAxis.csproj|solutionrelative:animalaxis\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CD6BADD1-563E-4033-92EE-233F302C2ED7}|AnimalAxis\\AnimalAxis.csproj|c:\\users\\ruivo\\documents\\projects\\animalaxis\\animalaxis\\animalaxisback\\animalaxis\\animalaxis\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD6BADD1-563E-4033-92EE-233F302C2ED7}|AnimalAxis\\AnimalAxis.csproj|solutionrelative:animalaxis\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,71 +26,59 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "RegistroReprodutivoDto.cs",
-              "DocumentMoniker": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\DTO\\RegistroReprodutivoDto.cs",
-              "RelativeDocumentMoniker": "AnimalAxis\\DTO\\RegistroReprodutivoDto.cs",
-              "ToolTip": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\DTO\\RegistroReprodutivoDto.cs",
-              "RelativeToolTip": "AnimalAxis\\DTO\\RegistroReprodutivoDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAXAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Pet.cs",
+              "DocumentMoniker": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\Models\\Pet.cs",
+              "RelativeDocumentMoniker": "AnimalAxis\\Models\\Pet.cs",
+              "ToolTip": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\Models\\Pet.cs",
+              "RelativeToolTip": "AnimalAxis\\Models\\Pet.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T04:02:23.749Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "RegistroReprodutivosController.cs",
-              "DocumentMoniker": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\Controllers\\RegistroReprodutivosController.cs",
-              "RelativeDocumentMoniker": "AnimalAxis\\Controllers\\RegistroReprodutivosController.cs",
-              "ToolTip": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\Controllers\\RegistroReprodutivosController.cs",
-              "RelativeToolTip": "AnimalAxis\\Controllers\\RegistroReprodutivosController.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAgwCYAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T03:15:55.057Z",
+              "WhenOpened": "2024-10-29T22:18:00.045Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "20241026032717_AnimalAxis.cs",
-              "DocumentMoniker": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\Migrations\\20241026032717_AnimalAxis.cs",
-              "RelativeDocumentMoniker": "AnimalAxis\\Migrations\\20241026032717_AnimalAxis.cs",
-              "ToolTip": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\Migrations\\20241026032717_AnimalAxis.cs",
-              "RelativeToolTip": "AnimalAxis\\Migrations\\20241026032717_AnimalAxis.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\Program.cs",
+              "RelativeDocumentMoniker": "AnimalAxis\\Program.cs",
+              "ToolTip": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\Program.cs",
+              "RelativeToolTip": "AnimalAxis\\Program.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAgwEMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T03:27:17.7Z",
+              "WhenOpened": "2024-11-04T22:39:45.118Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\Models\\Usuario.cs",
-              "RelativeDocumentMoniker": "AnimalAxis\\Models\\Usuario.cs",
-              "ToolTip": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\Models\\Usuario.cs",
-              "RelativeToolTip": "AnimalAxis\\Models\\Usuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "PetFilter.cs",
+              "DocumentMoniker": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\Filters\\PetFilter.cs",
+              "RelativeDocumentMoniker": "AnimalAxis\\Filters\\PetFilter.cs",
+              "ToolTip": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\Filters\\PetFilter.cs",
+              "RelativeToolTip": "AnimalAxis\\Filters\\PetFilter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T03:24:00.449Z",
+              "WhenOpened": "2024-11-04T23:03:01.362Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "RegistroMedicamentosController.cs",
-              "DocumentMoniker": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\Controllers\\RegistroMedicamentosController.cs",
-              "RelativeDocumentMoniker": "AnimalAxis\\Controllers\\RegistroMedicamentosController.cs",
-              "ToolTip": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\Controllers\\RegistroMedicamentosController.cs",
-              "RelativeToolTip": "AnimalAxis\\Controllers\\RegistroMedicamentosController.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAgwC4AAAAbAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "PetsController.cs",
+              "DocumentMoniker": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\Controllers\\PetsController.cs",
+              "RelativeDocumentMoniker": "AnimalAxis\\Controllers\\PetsController.cs",
+              "ToolTip": "C:\\Users\\Ruivo\\Documents\\Projects\\AnimalAxis\\AnimalAxis\\AnimalAxisBack\\AnimalAxis\\AnimalAxis\\Controllers\\PetsController.cs",
+              "RelativeToolTip": "AnimalAxis\\Controllers\\PetsController.cs",
+              "ViewState": "AgIAAPEAAAAAAAAAAAAgwAMBAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T01:07:33.135Z",
+              "WhenOpened": "2024-10-26T05:08:50.095Z",
               "EditorCaption": ""
             }
           ]

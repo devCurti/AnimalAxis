@@ -30,7 +30,7 @@ export const routes: Routes = [ {path: 'home', component: HomeComponent, canActi
     { path: 'medicamento/register/:id', component: MedicamentoRegisterComponent, canActivate: [AuthGuard]},
     { path: 'reproducao/register', component: RegisterReproducaoComponent, canActivate: [AuthGuard]},
     { path: 'reproducao/search', component: SearchReproducaoComponent, canActivate: [AuthGuard]},
-    { path: 'reproducao/register/:id', component: RegisterReproducaoComponent, canActivate: [AuthGuard]},
+    { path: 'reproducao/register/:id', component: RegisterReproducaoComponent, canActivate: [AuthGuard]}
 
     
  ];

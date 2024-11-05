@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { Pet } from '../models/pet';
 import { HttpHeaders } from '@angular/common/http';
+import { HttpParams } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -45,5 +46,12 @@ export class PetService {
   getPetById(petId: number): Observable<Pet> {
     return this.http.get<Pet>(`${this.apiUrl}/${petId}`, { headers: this.getHeaders() });
   }
+
+  filter(filterObject: any): Observable<Pet[]> {
+    return this.http.post<Pet[]>(`${this.apiUrl}/filter`, filterObject, {
+      headers: this.getHeaders()
+    });
+  }
+  
 }
 

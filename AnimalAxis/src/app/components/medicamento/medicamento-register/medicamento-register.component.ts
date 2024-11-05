@@ -157,6 +157,6 @@ export class MedicamentoRegisterComponent implements OnInit {
 
     this.registroMedicamento?.petId ? this.medicamentoForm.get('pet').setValue(this.registroMedicamento?.petId) : null;
     this.medicamentoForm.get('medicamento').setValue(this.registroMedicamento?.medicamentoId);
-    this.registroMedicamento?.dose ? this.medicamentoForm.get('dose').setValue(Doses[this.registroMedicamento?.dose]) : this.medicamentoForm.get('dose').setValue(Doses[0]);
+    this.registroMedicamento?.dose ? this.medicamentoForm.get('dose').setValue(Doses[this.registroMedicamento?.dose - 1]) : this.medicamentoForm.get('dose').setValue(Doses[0]);
   }
 }
