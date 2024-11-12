@@ -124,5 +124,25 @@ namespace AnimalAxis.Controllers
         {
             return _context.RegistroReprodutivo.Any(e => e.Id == id);
         }
+
+
+        [HttpGet("byPetId/{id}")]
+        public async Task<ActionResult<IEnumerable<RegistroReprodutivoDto>>> GetRegistroReprodutivoByPetId(int id)
+        {
+            var currentUser = _userContext.GetCurrentUserId();
+            return await _context.RegistroReprodutivo
+            .Where(n => n.UsuarioId == currentUser && (n.FemeaId == id || n.MachoId == id))
+            .Include(p => p.Femea)
+            .Include(p => p.Macho)
+            .Select(n => new RegistroReprodutivoDto
+            {
+                Id = n.Id,
+                FemeaNome = n.Femea != null ? n.Femea.Nome : null,
+                MachoNome = n.Macho != null ? n.Macho.Nome : null,
+                DataCio = n.DataDoCio,
+                PeriodoCruza = n.PeriodoDeCruz
+            })
+            .ToListAsync();
+        }
     }
 }

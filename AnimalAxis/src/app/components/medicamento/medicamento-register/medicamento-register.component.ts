@@ -29,6 +29,7 @@ import { RegistroMedicamento } from '../../../models/registroMedicamento';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { NgFor } from '@angular/common';
 import { Doses } from '../../../models/enums/dose';
+import { NavBarComponent } from '../../nav-bar/nav-bar.component';
 
 
 
@@ -36,7 +37,7 @@ import { Doses } from '../../../models/enums/dose';
 @Component({
   selector: 'app-medicamento-register',
   standalone: true,
-  imports: [InputTextModule, ReactiveFormsModule, ButtonModule, RouterModule, InputSwitchModule, NgIf, NgClass, FormsModule, DropdownModule, CalendarModule, ToastModule, FloatLabelModule, InputNumberModule, InputTextareaModule, RadioButtonModule, NgFor],
+  imports: [InputTextModule, ReactiveFormsModule, ButtonModule, RouterModule, InputSwitchModule, NgIf, NgClass, FormsModule, DropdownModule, CalendarModule, ToastModule, FloatLabelModule, InputNumberModule, InputTextareaModule, RadioButtonModule, NgFor, NavBarComponent],
   templateUrl: './medicamento-register.component.html',
   styleUrl: './medicamento-register.component.css',
   providers: [MessageService, DatePipe]

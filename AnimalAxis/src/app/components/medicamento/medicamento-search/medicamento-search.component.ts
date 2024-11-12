@@ -13,12 +13,13 @@ import { ConfirmationService } from 'primeng/api';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { RegistroMedicamento } from '../../../models/registroMedicamento';
 import { RegistroMedicamentoService } from '../../../services/registroMedicamento';
+import { NavBarComponent } from '../../nav-bar/nav-bar.component';
 
 
 @Component({
   selector: 'app-medicamento-search',
   standalone: true,
-  imports: [NgForOf, TableModule, ButtonModule, CommonModule, ToastModule, ConfirmDialogModule],
+  imports: [NgForOf, TableModule, ButtonModule, CommonModule, ToastModule, ConfirmDialogModule, NavBarComponent],
   templateUrl: './medicamento-search.component.html',
   styleUrl: './medicamento-search.component.css',
   providers: [MessageService, ConfirmationService]

@@ -11,11 +11,12 @@ import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
 import { ConfirmationService } from 'primeng/api';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { NavBarComponent } from '../../nav-bar/nav-bar.component';
 
 @Component({
   selector: 'app-search-nascimento',
   standalone: true,
-  imports: [NgForOf, TableModule, ButtonModule, CommonModule, ToastModule, ConfirmDialogModule],
+  imports: [NgForOf, TableModule, ButtonModule, CommonModule, ToastModule, ConfirmDialogModule, NavBarComponent],
   templateUrl: './search-nascimento.component.html',
   styleUrl: './search-nascimento.component.css',
   providers: [MessageService, ConfirmationService]

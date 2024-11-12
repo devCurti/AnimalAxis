@@ -22,12 +22,13 @@ import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 import { ActivatedRoute } from '@angular/router';
 import { DatePipe } from '@angular/common';
+import { NavBarComponent } from '../../nav-bar/nav-bar.component';
 
 
 @Component({
   selector: 'app-register-pet',
   standalone: true,
-  imports: [InputTextModule, ReactiveFormsModule, ButtonModule, RouterModule, InputSwitchModule, NgIf, NgClass, FormsModule, DropdownModule, CalendarModule, ToastModule],
+  imports: [InputTextModule, ReactiveFormsModule, ButtonModule, RouterModule, InputSwitchModule, NgIf, NgClass, FormsModule, DropdownModule, CalendarModule, ToastModule, NavBarComponent],
   templateUrl: './register-pet.component.html',
   styleUrl: './register-pet.component.css',
   providers: [MessageService, DatePipe]

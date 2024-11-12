@@ -1,3 +1,4 @@
+<app-nav-bar></app-nav-bar>
 <div class="container azulAnimal p-4 overflow-auto flex flex-column align-items-center justify-content-center">
     <div class="brancoAnimal text-center w-full md:w-10 p-6 md:p-8 border-round md:shadow-4 bg-white transition-shadow overflow-auto">
         <div class="p-3 mb-5">
@@ -38,6 +39,36 @@
                 </div>
             </div>
         </div>
+        <div class="grid mt-3 gap-6">
+            <div class="col-12 md:col-4">
+                <div class="flex flex-column gap-2">
+                    <h3 class="font-bold text-teal-700">Registros de Medicamentos:</h3>
+                    <div *ngFor="let registro of registrosMedicamentos">
+                        <div>{{registro.dose ? registro.dose != 4 ? registro.dose + '° Dose' : 'Reforço' : 'Reforço'}} - {{registro.medicamentoNome}} - {{ registro.dataAplicacao | date: 'dd/MM/yyyy' }}</div>
+                    </div>
+                    <div *ngIf="registrosMedicamentos.length == 0" class="text-gray-500">Sem registros encontrados!</div>
+                </div>
+            </div>
+            <div class="col-12 md:col-3">
+                <div class="flex flex-column gap-2">
+                    <h3 class="font-bold text-teal-700">Registros Reprodutivo:</h3>
+                    <div *ngFor="let registro of registrosReprodutivos">
+                        <div>{{registro.femeaNome}} - {{registro.periodoCruza | date: 'dd/MM/yyyy' }}</div>
+                    </div>
+                    <div *ngIf="registrosReprodutivos.length == 0" class="text-gray-500">Sem registros encontrados!</div>
+                </div>
+            </div>
+            <div class="col-12 md:col-4">
+                <div class="flex flex-column gap-2">
+                    <h3 class="font-bold text-teal-700">Registros de Nascimentos:</h3>
+                    <div *ngFor="let nascimento of nascimentos">
+                        <div>{{ nascimento.previsaoNascimento | date: 'dd/MM/yyyy' }} - {{nascimento.maeNome}} e {{nascimento.paiNome}}, {{nascimento.numFilhotes}} filhotes</div>
+                    </div>
+                    <div *ngIf="nascimentos.length == 0" class="text-gray-500">Sem nascimentos encontrados!</div>
+                </div>
+            </div>
+        </div>
+        
         <div class="grid mt-6">
             <div class="col-12">
                 <button (click)="goEdit()" class="p-button p-component font-bold text-white bg-green-500 hover:bg-green-600 transition duration-200 border-none w-full py-3 text-lg shadow-2">

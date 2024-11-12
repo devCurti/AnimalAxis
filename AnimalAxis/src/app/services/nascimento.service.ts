@@ -19,7 +19,7 @@ export class NascimentoService {
     });
   }
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getNascimentos(): Observable<Nascimento[]> {
     return this.http.get<Nascimento[]>(this.apiUrl, { headers: this.getHeaders() });
@@ -33,12 +33,17 @@ export class NascimentoService {
     return this.http.get<Nascimento>(`${this.apiUrl}/${id}`, { headers: this.getHeaders() });
   }
 
-  editNascimento(id:number, nascimento: Nascimento): Observable<Nascimento> {
+  editNascimento(id: number, nascimento: Nascimento): Observable<Nascimento> {
     return this.http.put<Nascimento>(`${this.apiUrl}/${id}`, nascimento, { headers: this.getHeaders() });
   }
 
   deleteNascimento(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`, { headers: this.getHeaders() });
-}
+  }
+
+  getNascimentoByPetId(id: number): Observable<Nascimento> {
+    return this.http.get<Nascimento>(`${this.apiUrl}/byPetId/${id}`, { headers: this.getHeaders() });
+  }
+
 
 }

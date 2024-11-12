@@ -1,25 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-import { NgFor } from '@angular/common';
+import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { MenubarModule } from 'primeng/menubar';
-import { NgIf } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
-import { NavBarComponent } from '../nav-bar/nav-bar.component';
+import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-nav-bar',
   standalone: true,
-  imports: [NgFor, RouterModule, MenubarModule, NgIf, NavBarComponent],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  imports: [RouterModule, MenubarModule, NgIf],
+  templateUrl: './nav-bar.component.html',
+  styleUrl: './nav-bar.component.css'
 })
-export class HomeComponent implements OnInit {
+export class NavBarComponent {
 
   constructor(private auth: AuthService){}
 
   userEmail: any = localStorage.getItem('user.email');
   user = JSON.parse(localStorage.getItem('user') || '{}');
-  
+
   items = [
     {
       label: 'Home',
@@ -29,12 +27,15 @@ export class HomeComponent implements OnInit {
     }
   ]
 
+
   ngOnInit(){
     this.userEmail = this.user.email;
   }
 
+  
   logout(){
     this.auth.logout();
   }
   
+
 }

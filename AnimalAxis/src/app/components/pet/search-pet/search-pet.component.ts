@@ -15,11 +15,12 @@ import { PetFilter } from '../../../models/filters/petFilter';
 import { DropdownModule } from 'primeng/dropdown';
 import { Raca } from '../../../models/raca';
 import { RacaService } from '../../../services/raca.service';
+import { NavBarComponent } from '../../nav-bar/nav-bar.component';
 
 @Component({
   selector: 'app-search-pet',
   standalone: true,
-  imports: [InputTextModule, ReactiveFormsModule, NgForOf, TableModule, ButtonModule, CommonModule, DropdownModule],
+  imports: [InputTextModule, ReactiveFormsModule, NgForOf, TableModule, ButtonModule, CommonModule, DropdownModule, NavBarComponent],
   templateUrl: './search-pet.component.html',
   styleUrl: './search-pet.component.css'
 })

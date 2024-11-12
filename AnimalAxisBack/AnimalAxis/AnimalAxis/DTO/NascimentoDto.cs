@@ -9,5 +9,6 @@
         public string? MaeNome { get; set; }
         public int? PaiId { get; set; }
         public int? MaeId { get; set; }
+        public string? PaiNome { get; set; }
     }
 }

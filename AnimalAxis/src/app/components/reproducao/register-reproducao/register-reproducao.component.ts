@@ -21,11 +21,12 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { RegistroReprodutivo } from '../../../models/registroReprodutivo';
 import { RegistroReprodutivoService } from '../../../services/registroReproducao';
+import { NavBarComponent } from '../../nav-bar/nav-bar.component';
 
 @Component({
   selector: 'app-register-reproducao',
   standalone: true,
-  imports: [InputTextModule, ReactiveFormsModule, ButtonModule, RouterModule, InputSwitchModule, NgIf, NgClass, FormsModule, DropdownModule, CalendarModule, ToastModule,FloatLabelModule, InputNumberModule, InputTextareaModule],
+  imports: [InputTextModule, ReactiveFormsModule, ButtonModule, RouterModule, InputSwitchModule, NgIf, NgClass, FormsModule, DropdownModule, CalendarModule, ToastModule,FloatLabelModule, InputNumberModule, InputTextareaModule, NavBarComponent],
   templateUrl: './register-reproducao.component.html',
   styleUrl: './register-reproducao.component.css',
   providers: [MessageService, DatePipe]

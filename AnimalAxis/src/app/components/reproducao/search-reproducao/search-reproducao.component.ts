@@ -13,11 +13,12 @@ import { ConfirmationService } from 'primeng/api';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { RegistroReprodutivo } from '../../../models/registroReprodutivo';
 import { RegistroReprodutivoService } from '../../../services/registroReproducao';
+import { NavBarComponent } from '../../nav-bar/nav-bar.component';
 
 @Component({
   selector: 'app-search-reproducao',
   standalone: true,
-  imports: [NgForOf, TableModule, ButtonModule, CommonModule, ToastModule, ConfirmDialogModule],
+  imports: [NgForOf, TableModule, ButtonModule, CommonModule, ToastModule, ConfirmDialogModule, NavBarComponent],
   templateUrl: './search-reproducao.component.html',
   styleUrl: './search-reproducao.component.css',
   providers: [MessageService, ConfirmationService]

@@ -139,5 +139,33 @@ namespace AnimalAxis.Controllers
         {
             return _context.Nascimento.Any(e => e.Id == id);
         }
+
+        [HttpGet("byPetId/{id}")]
+        public async Task<ActionResult<NascimentoDto>> GetNascimentoByPetId(int id)
+        {
+            var currentUser = _userContext.GetCurrentUserId();
+            var nascimento = await _context.Nascimento
+
+            .Where(n => n.UsuarioId == currentUser && (n.PaiId == id || n.MaeId == id))
+            .Select(n => new NascimentoDto
+            {
+                Id = n.Id,
+                Observacao = n.Observacao,
+                numFilhotes = n.numFilhotes,
+                PrevisaoNascimento = n.PrevisaoNascimento,
+                MaeId = n.Mae != null ? n.MaeId : null,
+                PaiId = n.Pai != null ? n.PaiId : null,
+                MaeNome = n.Mae.Nome != null ? n.Mae.Nome : null,
+                PaiNome = n.Pai.Nome != null ? n.Pai.Nome : null
+            })
+            .ToListAsync();
+
+            if (nascimento == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(nascimento); // Retorna o NascimentoDto
+        }
     }
 }

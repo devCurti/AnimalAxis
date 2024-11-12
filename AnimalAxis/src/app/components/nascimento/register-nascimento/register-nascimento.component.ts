@@ -21,12 +21,13 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { Nascimento } from '../../../models/nascimento';
 import { NascimentoService } from '../../../services/nascimento.service';
+import { NavBarComponent } from '../../nav-bar/nav-bar.component';
 
 
 @Component({
   selector: 'app-register-nascimento',
   standalone: true,
-  imports: [InputTextModule, ReactiveFormsModule, ButtonModule, RouterModule, InputSwitchModule, NgIf, NgClass, FormsModule, DropdownModule, CalendarModule, ToastModule,FloatLabelModule, InputNumberModule, InputTextareaModule],
+  imports: [InputTextModule, ReactiveFormsModule, ButtonModule, RouterModule, InputSwitchModule, NgIf, NgClass, FormsModule, DropdownModule, CalendarModule, ToastModule,FloatLabelModule, InputNumberModule, InputTextareaModule, NavBarComponent],
   templateUrl: './register-nascimento.component.html',
   styleUrl: './register-nascimento.component.css',
   providers: [MessageService, DatePipe]

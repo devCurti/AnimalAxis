@@ -12,7 +12,7 @@ import { HttpHeaders } from '@angular/common/http';
 export class RegistroReprodutivoService {
   private apiUrl = `${environment.apiUrl}/RegistroReprodutivos`;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   private getHeaders(): HttpHeaders {
     const token = localStorage.getItem('token');
@@ -34,11 +34,15 @@ export class RegistroReprodutivoService {
     return this.http.get<RegistroReprodutivo>(`${this.apiUrl}/${id}`, { headers: this.getHeaders() });
   }
 
-  editRegistroReprodutivos(id:number, registroReprodutivo: RegistroReprodutivo): Observable<RegistroReprodutivo> {
+  editRegistroReprodutivos(id: number, registroReprodutivo: RegistroReprodutivo): Observable<RegistroReprodutivo> {
     return this.http.put<RegistroReprodutivo>(`${this.apiUrl}/${id}`, registroReprodutivo, { headers: this.getHeaders() });
   }
 
   deleteRegistroReprodutivos(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`, { headers: this.getHeaders() });
-}
+  }
+
+  getRegistroReprodutivosByPetId(id: number): Observable<RegistroReprodutivo> {
+    return this.http.get<RegistroReprodutivo>(`${this.apiUrl}/byPetId/${id}`, { headers: this.getHeaders() });
+  }
 }

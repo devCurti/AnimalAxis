@@ -41,7 +41,8 @@ namespace AnimalAxis.Controllers
                 PetNome = n.Pet != null ? n.Pet.Nome : null,
                 MedicamentoNome = n.Medicamento != null ? n.Medicamento.Nome : null,
                 DataNascimentoPet = n.Pet != null ? n.Pet.DataNascimento : null,
-                TipoMedicamentoNome = n.Medicamento != null && n.Medicamento.TipoMedicamento != null ? n.Medicamento.TipoMedicamento.Nome : null
+                TipoMedicamentoNome = n.Medicamento != null && n.Medicamento.TipoMedicamento != null ? n.Medicamento.TipoMedicamento.Nome : null,
+                PetId = n.PetId
 
             })
             .ToListAsync();
@@ -126,6 +127,28 @@ namespace AnimalAxis.Controllers
         private bool RegistroMedicamentoExists(int id)
         {
             return _context.RegistroMedicamento.Any(e => e.Id == id);
+        }
+
+        [HttpGet("byPetId/{id}")]
+        public async Task<ActionResult<IEnumerable<RegistroMedicamentoDto>>> GetRegistroMedicamentoByPetId(int id)
+        {
+            var currentUser = _userContext.GetCurrentUserId();
+            return await _context.RegistroMedicamento
+            .Where(n => n.UsuarioId == currentUser && n.PetId == id)
+            .Include(p => p.Pet)
+            .Select(n => new RegistroMedicamentoDto
+            {
+                Id = n.Id,
+                DataAplicacao = n.DataAplicacao,
+                Dose = n.Dose,
+                PetNome = n.Pet != null ? n.Pet.Nome : null,
+                MedicamentoNome = n.Medicamento != null ? n.Medicamento.Nome : null,
+                DataNascimentoPet = n.Pet != null ? n.Pet.DataNascimento : null,
+                TipoMedicamentoNome = n.Medicamento != null && n.Medicamento.TipoMedicamento != null ? n.Medicamento.TipoMedicamento.Nome : null,
+                PetId = n.PetId
+
+            })
+            .ToListAsync();
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace AnimalAxis.DTO
+﻿using AnimalAxis.Models;
+
+namespace AnimalAxis.DTO
 {
     public class RegistroReprodutivoDto
     {

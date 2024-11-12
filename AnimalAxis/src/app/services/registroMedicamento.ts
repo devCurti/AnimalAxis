@@ -39,4 +39,10 @@ export class RegistroMedicamentoService {
   deleteMedicamento(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`, { headers: this.getHeaders() });
   }
+
+
+  getRegistroMedicamentosByPetId(id: number): Observable<RegistroMedicamento> {
+    return this.http.get<RegistroMedicamento>(`${this.apiUrl}/byPetId/${id}`, { headers: this.getHeaders() });
+  }
+
 }
