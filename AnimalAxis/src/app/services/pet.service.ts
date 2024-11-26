@@ -16,10 +16,10 @@ export class PetService {
   constructor(private http: HttpClient) {}
 
   private getHeaders(): HttpHeaders {
-    const token = localStorage.getItem('token'); // Obtém o token do localStorage
+    const token = localStorage.getItem('token');
     return new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}` // Adiciona o token no cabeçalho
+      'Authorization': `Bearer ${token}`
     });
   }
 
